@@ -8,6 +8,7 @@
 
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         style="@style/ButtonStyle"
         android:layout_width="0dp"
         android:layout_height="68dp"
@@ -32,142 +33,19 @@
 
     </LinearLayout>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+    <ListView
+        android:id="@+id/inform"
+        style="@style/ButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <LinearLayout
-                style="@style/ButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="366dp"
-                android:layout_marginStart="48dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="48dp"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.54"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.59000003">
-
-                <TextView
-                    style="@style/TextStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:gravity="center"
-                    android:text="категории"
-                    android:textSize="28dp"
-                    tools:layout_editor_absoluteX="35dp"
-                    tools:layout_editor_absoluteY="176dp" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        style="@style/TextStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="52dp"
-                        android:text="Кино" />
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical" />
-
-
-                    <TextView
-                        style="@style/TextStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="56dp"
-                        android:text="одежда" />
-
-                    <TextView
-                        style="@style/TextStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="56dp"
-                        android:text="Музыка" />
-
-                    <TextView
-                        style="@style/TextStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="56dp"
-                        android:text="It" />
-
-                    <TextView
-                        style="@style/TextStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="56dp"
-                        android:text="спорт" />
-
-                    <TextView
-                        style="@style/TextStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="56dp"
-                        android:text="математика" />
-
-                </LinearLayout>
-
-                <TextView
-                    style="@style/TextStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:gravity="center"
-                    android:text="сложность"
-                    android:textSize="28dp"
-                    tools:layout_editor_absoluteX="35dp"
-                    tools:layout_editor_absoluteY="176dp" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        style="@style/TextStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="56dp"
-                        android:text="легкая" />
-
-                    <TextView
-                        style="@style/TextStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="56dp"
-                        android:text="Средняя" />
-
-                    <TextView
-                        style="@style/TextStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="56dp"
-                        android:text="сложность" />
-
-                </LinearLayout>
-            </LinearLayout>
-        </FrameLayout>
-    </ScrollView>
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"></ListView>
 
 
 </android.support.constraint.ConstraintLayout>
