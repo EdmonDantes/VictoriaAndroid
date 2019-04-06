@@ -8,4 +8,7 @@
     <color name="colorButtonBackground">#B217C7FF</color>
 
     <color name="black_overlay">#66000000</color>
+    <color name="green_color">#EDD81C</color>
+    <color name="red_color">#DA1818</color>
+
 </resources>
