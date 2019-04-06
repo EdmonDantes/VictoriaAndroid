@@ -2,11 +2,7 @@ package ru.liveproduction.victoria.api;
 
 import com.google.gson.JsonObject;
 
-import java.util.AbstractMap;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 public class Game {
 
@@ -16,15 +12,16 @@ public class Game {
     List<Map.Entry<User, Integer>> players;
     User starting;
     List<Map.Entry<String, List<Question>>> questions = null;
+    List<Action> actions;
     int timeRead;
     int timeWrite;
 
-    Map.Entry<Question, Integer> nowQuestion = null;
+    Question nowQuestion = null;
 
     public Game(List<User> players, List<Map.Entry<String, List<Question>>> questions, int timeRead, int timeWrite) {
         this.players = new ArrayList<>(players.size());
         for (int i = 0; i < players.size(); i++){
-            this.players.add(new AbstractMap.SimpleEntry<User, Integer>(players.get(i), 0));
+            this.players.add(new AbstractMap.SimpleEntry<>(players.get(i), 0));
         }
 
         starting = players.get(new Random().nextInt(players.size() - 1));
@@ -32,6 +29,32 @@ public class Game {
         this.questions = questions;
         this.timeRead = timeRead;
         this.timeWrite = timeWrite;
+        this.actions = new ArrayList<>();
+    }
+
+    public User getStarting() {
+        return starting;
+    }
+
+    public void answer(User user, String answer) {
+        if (nowQuestion.isRigthAnswer(answer)) {
+            starting = user;
+            for (Map.Entry<User, Integer> play : players) {
+                if (play.getKey().equals(user)) {
+                    play.setValue(play.getValue() + nowQuestion.getPrice());
+                    return;
+
+                }
+            }
+            nowQuestion = null;
+        } else {
+            for (Map.Entry<User, Integer> play : players) {
+                if (play.getKey().equals(user)) {
+                    play.setValue(play.getValue() + nowQuestion.getPrice());
+                    return;
+                }
+            }
+        }
     }
 
     public int getId() {
@@ -57,12 +80,12 @@ public class Game {
     public boolean checkAnswer(int id, String answer){
         for (int i = 0; i < players.size(); i++) {
             if (players.get(i).getKey().getId() == id) {
-                if (nowQuestion.getKey().isRigthAnswer(answer)) {
-                    players.set(i, new AbstractMap.SimpleEntry<User, Integer>(players.get(i).getKey(), players.get(i).getValue() + nowQuestion.getValue()));
+                if (nowQuestion.isRigthAnswer(answer)) {
+                    players.set(i, new AbstractMap.SimpleEntry<>(players.get(i).getKey(), players.get(i).getValue() + nowQuestion.getPrice()));
                     starting = players.get(i).getKey();
                     return true;
                 } else {
-                    players.set(i, new AbstractMap.SimpleEntry<User, Integer>(players.get(i).getKey(), players.get(i).getValue() - nowQuestion.getValue()));
+                    players.set(i, new AbstractMap.SimpleEntry<>(players.get(i).getKey(), players.get(i).getValue() - nowQuestion.getPrice()));
                     return false;
                 }
             }
