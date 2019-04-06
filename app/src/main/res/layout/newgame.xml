@@ -86,7 +86,8 @@
             style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:text="Выбор вопросов"/>
+            android:text="Выбор вопросов"
+            android:onClick="click" />
 
         <View
             android:layout_width="match_parent"
