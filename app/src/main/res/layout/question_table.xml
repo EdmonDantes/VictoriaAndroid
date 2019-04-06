@@ -1,393 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground">
+    android:background="@color/colorBackground"
+    android:orientation="vertical">
 
-    <FrameLayout
+    <RelativeLayout
         style="@style/ButtonStyle"
-        android:layout_width="w"
-        android:layout_height="325dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="14dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.0">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="5"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp">
+        <TextView
+            android:id="@+id/preUsername"
+            style="@style/TextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="16dp"
+            android:gravity="clip_vertical"
+            android:layout_weight="9"
+            android:text="Ходит:"/>
 
-    </FrameLayout>
+        <TextView
+            style="@style/TextStyle"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/preUsername"
+            android:gravity="clip_vertical"
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="8"
+            android:text="Гасан"/>
 
-    <TextView
-        android:id="@+id/textView"
-        style="@style/TextStyle"
-        android:layout_width="103dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/tabel_botton_circle"
-        android:gravity="center"
+        <TextView
+            android:id="@+id/points"
+            style="@style/TextStyle"
+            android:gravity="right"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="9"
+            android:layout_marginRight="16dp"
+            android:text="250 очков"/>
+    </RelativeLayout>
 
-        android:text="ходит:"
-        android:textSize="17dp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="4dp" />
+    <LinearLayout
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        style="@style/ButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
 
-    <TextView
-        android:id="@+id/textView"
-        style="@style/TextStyle"
-        android:layout_width="103dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/tabel_botton_circle"
-        android:gravity="center"
-
-        android:text="очки:"
-        android:textSize="17dp"
-        tools:layout_editor_absoluteX="442dp"
-        tools:layout_editor_absoluteY="0dp" />
-
-    <TextView
-        style="@style/TextStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/tabel_botton_circle"
-        android:gravity="center"
-        android:text="одежда"
-        android:textColor="#ffff"
-        android:textSize="17dp"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="76dp" />
+    </LinearLayout>
 
 
-    <TextView
-        android:id="@+id/textView2"
-        style="@style/TextStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/tabel_botton_circle"
-        android:gravity="center"
-        android:text="одежда"
-        android:textColor="#ffff"
-        android:textSize="17dp"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="123dp" />
-
-    <TextView
-        android:id="@+id/textView6"
-        style="@style/TextStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/tabel_botton_circle"
-        android:gravity="center"
-        android:text="одежда"
-        android:textColor="#ffff"
-        android:textSize="17dp"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="302dp" />
-
-    <TextView
-        android:id="@+id/textView3"
-        style="@style/TextStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/tabel_botton_circle"
-        android:gravity="center"
-        android:text="одежда"
-        android:textColor="#ffff"
-        android:textSize="17dp"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="240dp" />
-
-    <TextView
-        android:id="@+id/textView4"
-        style="@style/TextStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/tabel_botton_circle"
-        android:gravity="center"
-        android:text="одежда"
-        android:textColor="#ffff"
-        android:textSize="17dp"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="177dp" />
-
-    <Button
-        style="@style/TextStyle"
-        android:layout_width="65dp"
-        android:layout_height="31dp"
-        android:background="@drawable/squere"
-        android:text="105"
-        android:textSize="17dp"
-        tools:layout_editor_absoluteX="183dp"
-        tools:layout_editor_absoluteY="77dp" />
-
-    <Button
-        android:id="@+id/button2"
-        style="@style/TextStyle"
-        android:layout_width="65dp"
-        android:layout_height="31dp"
-        android:background="@drawable/squere"
-        android:text="105"
-        android:textSize="17dp"
-        tools:layout_editor_absoluteX="183dp"
-        tools:layout_editor_absoluteY="123dp" />
-
-    <Button
-        android:id="@+id/button8"
-        style="@style/TextStyle"
-        android:layout_width="65dp"
-        android:layout_height="31dp"
-        android:background="@drawable/squere"
-        android:text="105"
-        android:textSize="17dp"
-        tools:layout_editor_absoluteX="183dp"
-        tools:layout_editor_absoluteY="178dp" />
-
-    <Button
-        android:id="@+id/button9"
-        style="@style/TextStyle"
-        android:layout_width="65dp"
-        android:layout_height="31dp"
-        android:background="@drawable/squere"
-        android:text="105"
-        android:textSize="17dp"
-        tools:layout_editor_absoluteX="183dp"
-        tools:layout_editor_absoluteY="240dp" />
-
-    <Button
-        android:id="@+id/button10"
-        style="@style/TextStyle"
-        android:layout_width="65dp"
-        android:layout_height="31dp"
-        android:background="@drawable/squere"
-        android:text="105"
-        android:textSize="17dp"
-        tools:layout_editor_absoluteX="183dp"
-        tools:layout_editor_absoluteY="302dp" />
-
-    <Button
-        android:id="@+id/button11"
-        style="@style/TextStyle"
-        android:layout_width="65dp"
-        android:layout_height="31dp"
-        android:background="@drawable/squere"
-        android:text="105"
-        android:textSize="17dp"
-        tools:layout_editor_absoluteX="268dp"
-        tools:layout_editor_absoluteY="241dp" />
-
-    <Button
-        android:id="@+id/button12"
-        style="@style/TextStyle"
-        android:layout_width="65dp"
-        android:layout_height="31dp"
-        android:background="@drawable/squere"
-        android:text="105"
-        android:textSize="17dp"
-        tools:layout_editor_absoluteX="268dp"
-        tools:layout_editor_absoluteY="178dp" />
-
-    <Button
-        android:id="@+id/button"
-        style="@style/TextStyle"
-        android:layout_width="65dp"
-        android:layout_height="31dp"
-        android:background="@drawable/squere"
-        android:text="15"
-        android:textSize="17dp"
-        tools:layout_editor_absoluteX="275dp"
-        tools:layout_editor_absoluteY="77dp" />
-
-    <Button
-        android:id="@+id/button3"
-        style="@style/TextStyle"
-        android:layout_width="65dp"
-        android:layout_height="31dp"
-        android:background="@drawable/squere"
-        android:text="15"
-        android:textSize="17dp"
-        tools:layout_editor_absoluteX="275dp"
-        tools:layout_editor_absoluteY="123dp" />
-
-    <Button
-        android:id="@+id/button13"
-        style="@style/TextStyle"
-        android:layout_width="65dp"
-        android:layout_height="31dp"
-        android:background="@drawable/squere"
-        android:text="15"
-        android:textSize="17dp"
-        tools:layout_editor_absoluteX="362dp"
-        tools:layout_editor_absoluteY="77dp" />
-
-    <Button
-        android:id="@+id/button14"
-        style="@style/TextStyle"
-        android:layout_width="65dp"
-        android:layout_height="31dp"
-        android:background="@drawable/squere"
-        android:text="15"
-        android:textSize="17dp"
-        tools:layout_editor_absoluteX="362dp"
-        tools:layout_editor_absoluteY="123dp" />
-
-    <Button
-        android:id="@+id/button15"
-        style="@style/TextStyle"
-        android:layout_width="65dp"
-        android:layout_height="31dp"
-        android:background="@drawable/squere"
-        android:text="15"
-        android:textSize="17dp"
-        tools:layout_editor_absoluteX="362dp"
-        tools:layout_editor_absoluteY="177dp" />
-
-    <Button
-        android:id="@+id/button16"
-        style="@style/TextStyle"
-        android:layout_width="65dp"
-        android:layout_height="31dp"
-        android:background="@drawable/squere"
-        android:text="15"
-        android:textSize="17dp"
-        tools:layout_editor_absoluteX="355dp"
-        tools:layout_editor_absoluteY="240dp" />
-
-    <Button
-        android:id="@+id/button17"
-        style="@style/TextStyle"
-        android:layout_width="65dp"
-        android:layout_height="31dp"
-        android:background="@drawable/squere"
-        android:text="15"
-        android:textSize="17dp"
-        tools:layout_editor_absoluteX="268dp"
-        tools:layout_editor_absoluteY="302dp" />
-
-    <Button
-        android:id="@+id/button18"
-        style="@style/TextStyle"
-        android:layout_width="65dp"
-        android:layout_height="31dp"
-        android:background="@drawable/squere"
-        android:text="15"
-        android:textSize="17dp"
-        tools:layout_editor_absoluteX="355dp"
-        tools:layout_editor_absoluteY="301dp" />
-
-    <Button
-        android:id="@+id/button19"
-        style="@style/TextStyle"
-        android:layout_width="65dp"
-        android:layout_height="31dp"
-        android:background="@drawable/squere"
-        android:text="15"
-        android:textSize="17dp"
-        tools:layout_editor_absoluteX="450dp"
-        tools:layout_editor_absoluteY="77dp" />
-
-    <Button
-        android:id="@+id/button20"
-        style="@style/TextStyle"
-        android:layout_width="65dp"
-        android:layout_height="31dp"
-        android:background="@drawable/squere"
-        android:text="15"
-        android:textSize="17dp"
-        tools:layout_editor_absoluteX="450dp"
-        tools:layout_editor_absoluteY="123dp" />
-
-    <Button
-        android:id="@+id/button21"
-        style="@style/TextStyle"
-        android:layout_width="65dp"
-        android:layout_height="31dp"
-        android:background="@drawable/squere"
-        android:text="15"
-        android:textSize="17dp"
-        tools:layout_editor_absoluteX="450dp"
-        tools:layout_editor_absoluteY="177dp" />
-
-    <Button
-        android:id="@+id/button22"
-        style="@style/TextStyle"
-        android:layout_width="65dp"
-        android:layout_height="31dp"
-        android:background="@drawable/squere"
-        android:text="15"
-        android:textSize="17dp"
-        tools:layout_editor_absoluteX="450dp"
-        tools:layout_editor_absoluteY="240dp" />
-
-    <Button
-        android:id="@+id/button23"
-        style="@style/TextStyle"
-        android:layout_width="65dp"
-        android:layout_height="31dp"
-        android:background="@drawable/squere"
-        android:text="15"
-        android:textSize="17dp"
-        tools:layout_editor_absoluteX="450dp"
-        tools:layout_editor_absoluteY="302dp" />
-
-    <Button
-        android:id="@+id/button24"
-        style="@style/TextStyle"
-        android:layout_width="65dp"
-        android:layout_height="31dp"
-        android:background="@drawable/squere"
-        android:text="15"
-        android:textSize="17dp"
-        tools:layout_editor_absoluteX="545dp"
-        tools:layout_editor_absoluteY="77dp" />
-
-    <Button
-        android:id="@+id/button25"
-        style="@style/TextStyle"
-        android:layout_width="65dp"
-        android:layout_height="31dp"
-        android:background="@drawable/squere"
-        android:text="15"
-        android:textSize="17dp"
-        tools:layout_editor_absoluteX="545dp"
-        tools:layout_editor_absoluteY="123dp" />
-
-    <Button
-        android:id="@+id/button26"
-        style="@style/TextStyle"
-        android:layout_width="65dp"
-        android:layout_height="31dp"
-        android:background="@drawable/squere"
-        android:text="15"
-        android:textSize="17dp"
-        tools:layout_editor_absoluteX="545dp"
-        tools:layout_editor_absoluteY="178dp" />
-
-    <Button
-        android:id="@+id/button27"
-        style="@style/TextStyle"
-        android:layout_width="65dp"
-        android:layout_height="31dp"
-        android:background="@drawable/squere"
-        android:text="15"
-        android:textSize="17dp"
-        tools:layout_editor_absoluteX="545dp"
-        tools:layout_editor_absoluteY="241dp" />
-
-    <Button
-        android:id="@+id/button28"
-        style="@style/TextStyle"
-        android:layout_width="65dp"
-        android:layout_height="31dp"
-        android:background="@drawable/squere"
-        android:text="15"
-        android:textSize="17dp"
-        tools:layout_editor_absoluteX="545dp"
-        tools:layout_editor_absoluteY="301dp" />
-
-
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>
