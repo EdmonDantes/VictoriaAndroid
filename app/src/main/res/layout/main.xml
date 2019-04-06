@@ -9,11 +9,11 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#0fff"
         android:src="@drawable/ic_announcement_black_24dp"
-        tools:layout_editor_absoluteX="371dp"
-        tools:layout_editor_absoluteY="8dp"
         tools:ignore="MissingConstraints"
-        android:background="#0fff"/>
+        tools:layout_editor_absoluteX="371dp"
+        tools:layout_editor_absoluteY="8dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,11 +30,11 @@
 
         <Button
             android:id="@+id/buttonNewGame"
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ButtonStyle"
-            android:text="@string/new_game"
-            android:onClick="newGame"/>
+            android:onClick="newGame"
+            android:text="@string/new_game" />
 
         <View
             android:layout_width="match_parent"
@@ -42,11 +42,10 @@
 
         <Button
             android:id="@+id/buttonConnectGame"
+            style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/ButtonStyle"
-            android:text="@string/connection"
-            />
+            android:text="@string/connection" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
