@@ -2,7 +2,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:aapt="http://schemas.android.com/aapt"
     android:width="128dp"
-    android:height="32dp"
+    android:height="64dp"
     android:viewportWidth="267"
     android:viewportHeight="117"
     >
@@ -15,7 +15,7 @@
 
         <path
             android:pathData="M1 1V116H266V1"
-            android:fillColor="#B317C7FF"
+            android:fillColor="#B30089BF"
             />
 
     </group>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/android_4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#0073A0"
+        tools:ignore="MissingConstraints">
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="575dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Название комнаты"
+            android:orientation="vertical" />
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Название категории"
+            android:layout_marginTop="120dp"
+            android:layout_marginBottom="475dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp" />
+
+        <View
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="210dp"
+            android:layout_marginBottom="130dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp" />
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Готов!"
+            android:layout_marginTop="540dp"
+            android:layout_marginBottom="50dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp" />
+    </RelativeLayout>
+
+
+</android.support.constraint.ConstraintLayout>
