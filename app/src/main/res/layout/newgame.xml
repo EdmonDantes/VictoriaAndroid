@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="8dp"
         android:orientation="vertical"
@@ -25,7 +25,8 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:hint="@string/namehint"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:maxLength="17"/>
 
         <View
             android:layout_width="match_parent"
@@ -54,7 +55,7 @@
 
 
                 <SeekBar
-                    android:id="@+id/seekBar"
+                    android:id="@+id/countPlayers"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:progressDrawable="@drawable/radioline"
@@ -64,6 +65,7 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/countPlayersTextView"
                 style="@style/TextStyle"
                 android:layout_gravity="center_vertical"
                 android:layout_width="match_parent"
@@ -91,10 +93,12 @@
             android:layout_height="@dimen/marginTop" />
 
         <LinearLayout
+            android:id="@+id/choseComplex"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@drawable/whitebox">
+            android:background="@drawable/whitebox"
+            android:visibility="invisible">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -250,7 +254,13 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="@dimen/marginTop" />
+            android:layout_height="30dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            style="@style/ButtonStyle"
+            android:text="Создать игру"/>
 
 
 

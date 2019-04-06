@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             style="@style/ButtonStyle"
             android:text="@string/new_game"
-            android:onClick="click"/>
+            android:onClick="newGame"/>
 
         <View
             android:layout_width="match_parent"
