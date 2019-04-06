@@ -15,7 +15,7 @@ public class FullscreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.chosepack);
+        setContentView(R.layout.question_table);
     }
 
     public void click(View view) {
