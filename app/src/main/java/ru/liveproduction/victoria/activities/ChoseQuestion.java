@@ -1,4 +1,18 @@
 package ru.liveproduction.victoria.activities;
 
-public class ChoseQuestion {
+import android.app.Activity;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+
+import ru.liveproduction.victoria.R;
+
+public class ChoseQuestion extends Activity {
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.chosepack);
+
+        findViewById(R.id.chosePackListView);
+    }
 }

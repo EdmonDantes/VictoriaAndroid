@@ -1,10 +1,9 @@
 package ru.liveproduction.victoria.api;
 
 import com.google.gson.JsonObject;
-import javafx.util.Pair;
-import ru.liveproduction.victoria.server.PackManager;
 
 import java.util.*;
+import java.util.function.Predicate;
 
 public class Lobby {
 
@@ -38,8 +37,13 @@ public class Lobby {
         return maxPlayers - players.size();
     }
 
-    public void exitFromLobby(User user){
-        players.removeIf((obj) -> obj.getKey().equals(user));
+    public void exitFromLobby(final User user){
+        players.removeIf(new Predicate<Map.Entry<User, Boolean>>() {
+            @Override
+            public boolean test(Map.Entry<User, Boolean> obj) {
+                return obj.getKey().equals(user);
+            }
+        });
         actions.put(user, new AbstractMap.SimpleEntry<>(5, System.currentTimeMillis()));
     }
 
@@ -76,20 +80,6 @@ public class Lobby {
 
     public List<Map.Entry<User, Boolean>> getPlayers() {
         return players;
-    }
-
-    public Game startGame(PackManager packManager){
-        Pack pack = packManager.getPackWithId(packId).complex(easy, middle, hard);
-
-        List<User> users = new ArrayList<>();
-
-        for (Map.Entry<User, Boolean> pair : players) {
-            users.add(pair.getKey());
-            actions.put(pair.getKey(), new AbstractMap.SimpleEntry<>(10, System.currentTimeMillis()));
-            if (!pair.getValue()) return null;
-        }
-
-        return new Game(users, pack.getQuestion(pack.getCategories(new Random().nextInt(maxPlayers / 2) + maxPlayers), 7), timeRead, timeWrite);
     }
 
     public JsonObject toJson(){

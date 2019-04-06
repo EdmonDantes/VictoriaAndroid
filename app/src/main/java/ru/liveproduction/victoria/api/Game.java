@@ -1,10 +1,11 @@
 package ru.liveproduction.victoria.api;
 
 import com.google.gson.JsonObject;
-import javafx.util.Pair;
 
+import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 public class Game {
@@ -12,18 +13,18 @@ public class Game {
     public static int ids = 0;
     int id = ids++;
     int round = 1;
-    List<Pair<User, Integer>> players;
+    List<Map.Entry<User, Integer>> players;
     User starting;
-    List<Pair<String, List<Question>>> questions = null;
+    List<Map.Entry<String, List<Question>>> questions = null;
     int timeRead;
     int timeWrite;
 
-    Pair<Question, Integer> nowQuestion = null;
+    Map.Entry<Question, Integer> nowQuestion = null;
 
-    public Game(List<User> players, List<Pair<String, List<Question>>> questions, int timeRead, int timeWrite) {
+    public Game(List<User> players, List<Map.Entry<String, List<Question>>> questions, int timeRead, int timeWrite) {
         this.players = new ArrayList<>(players.size());
         for (int i = 0; i < players.size(); i++){
-            this.players.add(new Pair<User, Integer>(players.get(i), 0));
+            this.players.add(new AbstractMap.SimpleEntry<User, Integer>(players.get(i), 0));
         }
 
         starting = players.get(new Random().nextInt(players.size() - 1));
@@ -57,11 +58,11 @@ public class Game {
         for (int i = 0; i < players.size(); i++) {
             if (players.get(i).getKey().getId() == id) {
                 if (nowQuestion.getKey().isRigthAnswer(answer)) {
-                    players.set(i, new Pair<>(players.get(i).getKey(), players.get(i).getValue() + nowQuestion.getValue()));
+                    players.set(i, new AbstractMap.SimpleEntry<User, Integer>(players.get(i).getKey(), players.get(i).getValue() + nowQuestion.getValue()));
                     starting = players.get(i).getKey();
                     return true;
                 } else {
-                    players.set(i, new Pair<>(players.get(i).getKey(), players.get(i).getValue() - nowQuestion.getValue()));
+                    players.set(i, new AbstractMap.SimpleEntry<User, Integer>(players.get(i).getKey(), players.get(i).getValue() - nowQuestion.getValue()));
                     return false;
                 }
             }
@@ -69,7 +70,7 @@ public class Game {
         return false;
     }
 
-    public List<Pair<User, Integer>> getPlayers(){
+    public List<Map.Entry<User, Integer>> getPlayers(){
         return players;
     }
 
