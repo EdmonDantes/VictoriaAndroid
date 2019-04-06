@@ -97,58 +97,60 @@
             android:id="@+id/choseComplex"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:background="@drawable/whitebox"
-            android:visibility="invisible">
+            android:orientation="vertical"
+            android:visibility="visible">
+
             <TextView
+                style="@style/TextStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                style="@style/TextStyle"
-                android:text="Выбрать сложность"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:text="Выбрать сложность" />
 
             <LinearLayout
                 android:id="@+id/complexLayout"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:orientation="horizontal"
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
-                android:layout_marginBottom="8dp">
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal">
 
                 <Button
-                    android:layout_weight="3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="@drawable/graybutton"
                     android:fontFamily="@font/marvin"
-                    android:text="Легко"
-                    android:background="@drawable/graybutton"/>
+                    android:text="Легко" />
 
                 <View
-                    android:layout_weight="1"
                     android:layout_width="20dp"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
 
                 <Button
-                    android:layout_weight="3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="@drawable/graybutton"
                     android:fontFamily="@font/marvin"
-                    android:text="Средне"
-                    android:background="@drawable/graybutton"/>
+                    android:text="Средне" />
+
                 <View
-                    android:layout_weight="1"
                     android:layout_width="20dp"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
 
                 <Button
-                    android:layout_weight="3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="@drawable/graybutton"
                     android:fontFamily="@font/marvin"
-                    android:text="Сложно"
-                    android:background="@drawable/graybutton"/>
+                    android:text="Сложно" />
 
             </LinearLayout>
         </LinearLayout>
