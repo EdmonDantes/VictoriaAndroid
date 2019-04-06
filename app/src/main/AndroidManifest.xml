@@ -27,7 +27,9 @@
 
         <activity android:name=".activities.NewGameActivity"/>
         <activity android:name=".activities.TableActivity" android:screenOrientation="landscape"/>
-        <activity android:name=".activities.ChoseQuestion" />
+        <activity android:name=".activities.ChoseQuestionActivity" />
+        <activity android:name=".activities.SearchGameActivity"/>
+        <activity android:name=".activities.ChoseQuestionActivity"/>
     </application>
 
 </manifest>
