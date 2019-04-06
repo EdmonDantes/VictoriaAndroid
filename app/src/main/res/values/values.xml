@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="leftBorder">20dp</dimen>
+    <dimen name="rigthBorder">20dp</dimen>
+    <dimen name="marginTop">5dp</dimen>
+</resources>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Victoria</string>
+
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="new_game">Новая игра</string>
+    <string name="connection">Присоединиться</string>
+    <string name="namehint">Название</string>
+</resources>
