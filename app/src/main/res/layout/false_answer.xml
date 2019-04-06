@@ -4,16 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_height="match_parent"
+
     android:background="@color/colorBackground">
 
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        android:orientation="vertical">
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="15dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             style="@style/TextStyle"
@@ -26,12 +30,15 @@
         style="@style/TextStyle"
         android:layout_width="397dp"
         android:layout_height="137dp"
-        android:layout_marginStart="125dp"
-        android:background="@drawable/true_answer"
+        android:layout_marginStart="148dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginBottom="49dp"
+        android:background="@drawable/false_answer"
         android:text="Неправильно!"
         android:textSize="39dp"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="201dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline"
