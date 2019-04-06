@@ -30,11 +30,11 @@
 
         <Button
             android:id="@+id/buttonNewGame"
-            style="@style/ButtonStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="newGame"
-            android:text="@string/new_game" />
+            android:layout_height="150dp"
+            style="@style/ButtonStyle"
+            android:text="@string/new_game"
+            android:onClick="newGame" />
 
         <View
             android:layout_width="match_parent"
@@ -42,10 +42,11 @@
 
         <Button
             android:id="@+id/buttonConnectGame"
-            style="@style/ButtonStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/connection" />
+            android:layout_height="150dp"
+            style="@style/ButtonStyle"
+            android:text="@string/connection"
+            />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
