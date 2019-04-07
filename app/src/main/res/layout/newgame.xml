@@ -77,8 +77,8 @@
 
                     <SeekBar
                         android:id="@+id/players"
-                        android:max="12"
-                        android:progress="2"
+                        android:max="14"
+                        android:progress="1"
                         android:min="2"
                         android:layout_marginLeft="12dp"
                         android:layout_width="match_parent"
@@ -209,7 +209,10 @@
 
 
                     <SeekBar
-                        android:id="@+id/seekBar2"
+                        android:id="@+id/timer"
+                        android:max="10"
+                        android:progress="2"
+                        android:min="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="5"
@@ -220,13 +223,15 @@
                 </LinearLayout>
 
                 <TextView
+                    android:id="@+id/countTimeTextView"
+
                     style="@style/TextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginRight="@dimen/rigthBorder"
                     android:layout_weight="4"
-                    android:text="30 c"
+                    android:text="0"
                     android:textSize="9pt" />
 
             </LinearLayout>

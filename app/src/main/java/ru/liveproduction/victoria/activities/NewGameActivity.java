@@ -7,11 +7,16 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import ru.liveproduction.victoria.R;
 
 public class NewGameActivity extends BaseActivity {
 
+int g;
+    Timer  timer;
+    TimerTask mTimerTask;
     @Override
     protected void onCreate(@Nullable final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,9 +27,28 @@ public class NewGameActivity extends BaseActivity {
 
 
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                @Override
+                public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                    textView.setText(String.valueOf(i));
+                }
+
+                @Override
+                public void onStartTrackingTouch(SeekBar seekBar) {
+
+                }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+               final SeekBar seekBarTimeRead = (SeekBar) findViewById(R.id.timer);
+        final TextView textViewTimeRead = (TextView) findViewById(R.id.countTimeTextView);
+        seekBarTimeRead.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                textView.setText(String.valueOf(i));
+                textViewTimeRead.setText(String.valueOf(i)+"c");
             }
 
             @Override
@@ -37,6 +61,10 @@ public class NewGameActivity extends BaseActivity {
 
             }
         });
+
+
+
+
     }
 
     public void choseQuestion(View view) {

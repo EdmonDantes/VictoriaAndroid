@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/buttonNewGame"
+
             android:layout_width="match_parent"
             android:layout_height="150dp"
             style="@style/ButtonStyle"

@@ -23,6 +23,8 @@
 
     <EditText
         style="@style/ButtonStyle"
+        android:id="@+id/buttonTimeRead"
+        
         android:text="00:05"
         android:textAlignment="center"
         android:layout_width="match_parent"
