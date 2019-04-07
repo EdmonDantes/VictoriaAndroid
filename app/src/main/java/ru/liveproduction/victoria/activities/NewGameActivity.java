@@ -68,10 +68,34 @@ public class NewGameActivity extends BaseActivity {
 
             }
         });
+
+        final SeekBar seekBarTimeWrite = (SeekBar) findViewById(R.id.timeWrite);
+        final TextView textViewTimeWrite = (TextView) findViewById(R.id.countTimeReadTextView);
+        seekBarTimeWrite.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                textViewTimeWrite.setText(String.valueOf(i)+"c");
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+
+
+
     }
 
     public void choseQuestion(View view) {
         Intent in = new Intent(this, ChoseQuestionActivity.class);
+        in.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
         startActivityForResult(in, 43);
     }
 
