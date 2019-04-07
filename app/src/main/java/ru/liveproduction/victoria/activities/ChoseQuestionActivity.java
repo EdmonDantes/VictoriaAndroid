@@ -9,12 +9,10 @@ import android.view.View;
 import android.widget.ListView;
 
 import java.io.IOException;
-import java.net.HttpURLConnection;
 
 import ru.liveproduction.victoria.R;
 import ru.liveproduction.victoria.VictoriaApplication;
 import ru.liveproduction.victoria.adapters.PackAdapter;
-import ru.liveproduction.victoria.api.Pack;
 import ru.liveproduction.victoria.api.PackManager;
 import ru.liveproduction.victoria.utils.Utils;
 
@@ -23,7 +21,7 @@ public class ChoseQuestionActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.chosepack);
+        setContentView(R.layout.room_game_adapter_x);
         new Task(this).execute();
         activity = this;
     }

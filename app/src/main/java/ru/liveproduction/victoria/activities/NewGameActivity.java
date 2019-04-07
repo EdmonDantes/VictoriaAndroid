@@ -59,6 +59,25 @@ public class NewGameActivity extends BaseActivity {
             }
         });
 
+        final SeekBar seekBarTimeWrite = (SeekBar) findViewById(R.id.timeWrite);
+        final TextView textViewTimeWrite = (TextView) findViewById(R.id.countTimeReadTextView);
+        seekBarTimeWrite.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                textViewTimeWrite.setText(String.valueOf(i)+"c");
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
 
 
 

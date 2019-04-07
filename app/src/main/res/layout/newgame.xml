@@ -255,6 +255,7 @@
 
                     <TextView
                         style="@style/TextStyle"
+                        android:id="@+id/countTimeReadTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/leftBorder"
@@ -263,7 +264,11 @@
                         android:textSize="5pt" />
 
                     <SeekBar
-                        android:id="@+id/seekBar3"
+                        android:id="@+id/timeWrite"
+                        android:max="180"
+                        android:progress="30"
+                        android:min="30"
+
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="5"

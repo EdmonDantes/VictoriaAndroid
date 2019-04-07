@@ -56,7 +56,7 @@
             android:layout_marginStart="100dp"
             android:layout_marginTop="26dp"
             android:layout_marginBottom="-264dp"
-            android:below="@id/linearLayout3"
+
             android:text="Готов!" />
 
 
