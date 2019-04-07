@@ -56,16 +56,17 @@ public class InfoPackActivity extends BaseActivity {
         textView.setText("");
         textView.append("Категории:\n");
         for (String str : pack.getCategories()) {
+            textView.append("\t");
             textView.append(str);
             textView.append("\n");
         }
         textView.append("Сложности:\n");
         if (easy)
-            textView.append("Легко\n");
+            textView.append("\tЛегко\n");
         if (middle)
-            textView.append("Средне\n");
+            textView.append("\tСредне\n");
         if (hard)
-            textView.append("Сложно\n");
+            textView.append("\tСложно\n");
     }
 
     public void chosePack(View view) {
