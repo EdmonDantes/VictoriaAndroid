@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/TextStyle"
+        android:layout_width="310dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="65dp"
+        android:background="@drawable/buttonunsel"
+        android:gravity="center"
+        android:text="имя победителя"
+        android:textSize="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        style="@style/ButtonStyle"
+        android:layout_width="301dp"
+        android:layout_height="407dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="52dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+    <LinearLayout
+        android:layout_width="230dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginEnd="52dp"
+        android:background="@drawable/button_new_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.467"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="483dp">
+
+        <LinearLayout
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="77dp"
+            android:layout_marginEnd="52dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+
+                style="@style/TextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="результат игры "
+                android:textSize="22dp" />
+        </LinearLayout>
+
+        <TextView
+
+            style="@style/TextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:text="результат игры "
+            android:textSize="22dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="242dp"
+        android:layout_height="72dp"
+        android:background="@drawable/true_answer"
+        android:text="победитель"
+        tools:layout_editor_absoluteX="88dp"
+        tools:layout_editor_absoluteY="202dp" />
+
+    <LinearLayout
+        android:layout_width="238dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button_new_background"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintStart_toStartOf="parent"></LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="238dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginEnd="52dp"
+        android:background="@drawable/button_new_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="380dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="384dp"
+            android:layout_marginEnd="52dp"
+            android:background="@drawable/button_new_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.521"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
