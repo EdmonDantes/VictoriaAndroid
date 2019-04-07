@@ -8,8 +8,8 @@
 
     <ImageButton
         android:id="@+id/imageButton"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginLeft="12dp"
         android:background="@drawable/rectangle"
         android:src="@drawable/go_back"
@@ -76,7 +76,7 @@
             style="@style/TextStyle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="TextView"
+            android:text="Категории"
             android:layout_marginLeft="12dp"
             android:layout_marginRight="12dp"
             android:layout_marginTop="2dp"
