@@ -10,14 +10,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="78dp"
+        tools:layout_editor_absoluteY="48dp">
 
 
         <ImageButton
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:layout_marginLeft="8dp"
             android:background="@drawable/backgroud_back_arrow"
+            android:onClick="go_back"
             android:scaleType="fitCenter"
             android:src="@drawable/go_back"
             app:layout_constraintStart_toStartOf="parent"
@@ -78,7 +81,7 @@
                         android:layout_height="wrap_content"
                         android:progressDrawable="@drawable/radioline"
                         android:splitTrack="false"
-                        android:thumb="@drawable/whitecircle"/>
+                        android:thumb="@drawable/whitecircle" />
                 </LinearLayout>
 
                 <TextView

@@ -14,7 +14,8 @@
         android:background="@drawable/rectangle"
         android:src="@drawable/go_back"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="go_back"/>
 
 
     <LinearLayout

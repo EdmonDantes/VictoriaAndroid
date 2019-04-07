@@ -11,11 +11,12 @@
         android:id="@+id/imageButton"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
         android:background="@drawable/rectangle"
         android:src="@drawable/go_back"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="go_back"/>
 
     <ListView
         android:id="@+id/chosePackListView"

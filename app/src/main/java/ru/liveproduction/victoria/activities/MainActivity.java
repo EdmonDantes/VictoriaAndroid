@@ -27,4 +27,8 @@ public class MainActivity extends AppCompatActivity {
         Intent in = new Intent(this, SearchGameActivity.class);
         startActivity(in);
     }
+
+    public void go_back(View v) {
+        onBackPressed();// возврат на предыдущий activity
+    }
 }

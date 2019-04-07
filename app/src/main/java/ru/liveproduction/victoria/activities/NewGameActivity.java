@@ -43,4 +43,12 @@ public class NewGameActivity extends Activity {
         Intent in = new Intent(this, ChoseQuestionActivity.class);
         startActivity(in);
     }
+
+   // public void go_back(){
+     //   DataTablePage DTP = new DataTablePage(int id, int parms);
+
+//    }
+    public void go_back(View v){
+        onBackPressed();// возврат на предыдущий activity
+    }
 }
