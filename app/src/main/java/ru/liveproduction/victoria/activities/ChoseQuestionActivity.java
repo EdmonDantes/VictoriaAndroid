@@ -21,7 +21,7 @@ public class ChoseQuestionActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.room_game_adapter_x);
+        setContentView(R.layout.chose_pack);
         new Task(this).execute();
         activity = this;
     }

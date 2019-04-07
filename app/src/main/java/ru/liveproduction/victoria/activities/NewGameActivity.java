@@ -95,7 +95,6 @@ public class NewGameActivity extends BaseActivity {
 
     public void choseQuestion(View view) {
         Intent in = new Intent(this, ChoseQuestionActivity.class);
-        in.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
         startActivityForResult(in, 43);
     }
 
