@@ -2,6 +2,7 @@ package ru.liveproduction.victoria.activities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import org.w3c.dom.Text;
@@ -160,29 +162,48 @@ public class NewGameActivity extends BaseActivity {
         SeekBar timeWrite = findViewById(R.id.timeWrite);
 
         if (textView.getText().toString().length() > 0 && (easy.isCheck() || middle.isCheck() || hard.isCheck())) {
-            try {
-                JsonObject jsonObject = new JsonObject();
-                jsonObject.addProperty("easy", easy.isCheck());
-                jsonObject.addProperty("middle", middle.isCheck());
-                jsonObject.addProperty("hard", hard.isCheck());
-
-                Utils.get(0, new String[][]{
-                        new String[]{"name", textView.getText().toString()},
-                        new String[]{"countPlayers", String.valueOf(players.getProgress())},
-                        new String[]{"packId", String.valueOf(pack.getId())},
-                        new String[]{"complex", jsonObject.toString()},
-                        new String[]{"timeRead", String.valueOf(timeRead.getProgress())},
-                        new String[]{"timeWrite", String.valueOf(timeWrite.getProgress())}
-                }).getAsInt();
-
-                Lobby lobby = new Lobby(textView.getText().toString(), pack.getId(), players.getProgress(),  timeWrite.getProgress(), timeRead.getProgress(), easy.isCheck(), middle.isCheck(), hard.isCheck(), VictoriaApplication.user.getId());
-
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            Lobby lobby = new Lobby(textView.getText().toString(), pack.getId(), players.getProgress(),  timeWrite.getProgress(), timeRead.getProgress(), easy.isCheck(), middle.isCheck(), hard.isCheck(), VictoriaApplication.user.getId());
+            new Task(activity, lobby).execute();
         } else {
             Toast.makeText(this, "Неправильные данные", Toast.LENGTH_SHORT).show();
         }
     }
+
+    class Task extends AsyncTask<Void, Void, Integer> {
+
+        Activity activity;
+        Lobby lobby;
+
+        public Task(Activity activity, Lobby lobby){
+            this.activity = activity;
+            this.lobby = lobby;
+        }
+
+        @Override
+        protected Integer doInBackground(Void... voids) {
+            try {
+                JsonElement tmp = Utils.get(0, lobby.toJson());
+                if (tmp != null)
+                    return tmp.getAsInt();
+                else return 0;
+            } catch (IOException e) {
+                e.printStackTrace();
+                return -1;
+            }
+        }
+
+        @Override
+        protected void onPostExecute(Integer integer) {
+            if (integer < 0) Toast.makeText(activity, "ERROR@##", Toast.LENGTH_SHORT).show();
+            else {
+                Intent intent = new Intent(activity, LobbyActivity.class);
+                intent.putExtra("pack", pack);
+                intent.putExtra("lobby", lobby);
+                intent.setFlags(Intent.FLAG_ACTIVITY_TASK_ON_HOME);
+                startActivity(intent);
+            }
+            super.onPostExecute(integer);
+        }
+    }
 }
+

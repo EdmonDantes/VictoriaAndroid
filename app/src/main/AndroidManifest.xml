@@ -33,6 +33,7 @@
         <activity android:name=".activities.ChoseQuestionActivity" />
         <activity android:name=".activities.SearchGameActivity"/>
         <activity android:name=".activities.InfoPackActivity"/>
+        <activity android:name=".activities.LobbyActivity"/>
     </application>
 
 </manifest>
