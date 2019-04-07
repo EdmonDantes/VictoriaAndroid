@@ -59,7 +59,6 @@ public class PackAdapter extends BaseAdapter {
             public void onClick(View view) {
                 Intent intent = new Intent(activity, InfoPackActivity.class);
                 intent.putExtra("pack", VictoriaApplication.packList.get(i));
-                intent.addFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
                 activity.startActivityForResult(intent, 43);
             }
         });
