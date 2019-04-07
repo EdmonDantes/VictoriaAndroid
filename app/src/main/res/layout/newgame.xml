@@ -7,288 +7,280 @@
     android:layout_height="match_parent"
     android:background="@color/colorBackground">
 
+    <ImageButton
+        android:layout_width="56dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="32dp"
+        android:background="@drawable/rectangle"
+
+        android:onClick="go_back"
+        android:src="@drawable/go_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="78dp"
-        tools:layout_editor_absoluteY="48dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
 
-        <ImageButton
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_marginLeft="8dp"
-            android:background="@drawable/backgroud_back_arrow"
-            android:onClick="go_back"
-            android:scaleType="fitCenter"
-            android:src="@drawable/go_back"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />
+        <EditText
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:hint="@string/namehint"
+            android:textAlignment="center"
+            android:maxLength="17" />
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/marginTop" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginBottom="8dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-
-            <EditText
-                style="@style/ButtonStyle"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:hint="@string/namehint"
-                android:maxLength="17"
-                android:textAlignment="center" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/marginTop" />
+            android:orientation="horizontal"
+            android:background="@drawable/whitebox">
 
             <LinearLayout
+                android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/whitebox"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        style="@style/TextStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/leftBorder"
-                        android:layout_marginTop="8dp"
-                        android:text="Кол-во игроков"
-                        android:textSize="5pt" />
-
-                    <SeekBar
-                        android:id="@+id/players"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:progressDrawable="@drawable/radioline"
-                        android:splitTrack="false"
-                        android:thumb="@drawable/whitecircle" />
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/countPlayersTextView"
-                    style="@style/TextStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="@dimen/rigthBorder"
-                    android:layout_weight="4"
-                    android:text="1"
-                    android:textSize="9pt" />
-
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/marginTop" />
-
-            <Button
-                style="@style/ButtonStyle"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:onClick="choseQuestion"
-                android:text="Выбор вопросов" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/marginTop" />
-
-            <LinearLayout
-                android:id="@+id/choseComplex"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/whitebox"
-                android:orientation="vertical"
-                android:visibility="invisible">
+                android:orientation="vertical">
 
                 <TextView
                     style="@style/TextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:gravity="center"
-                    android:text="Выбрать сложность" />
+                    android:layout_marginLeft="@dimen/leftBorder"
+                    android:layout_marginTop="8dp"
+                    android:text="Кол-во игроков"
+                    android:textSize="5pt" />
 
-                <LinearLayout
-                    android:id="@+id/complexLayout"
+                <SeekBar
+                    android:id="@+id/countPlayers"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"
-                    android:layout_marginBottom="8dp"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:background="@drawable/graybutton"
-                        android:fontFamily="@font/marvin"
-                        android:text="Легко" />
-
-                    <View
-                        android:layout_width="20dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:background="@drawable/graybutton"
-                        android:fontFamily="@font/marvin"
-                        android:text="Средне" />
-
-                    <View
-                        android:layout_width="20dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:background="@drawable/graybutton"
-                        android:fontFamily="@font/marvin"
-                        android:text="Сложно" />
-
-                </LinearLayout>
+                    android:layout_height="wrap_content"
+                    android:progressDrawable="@drawable/radioline"
+                    android:splitTrack="false"
+                    android:thumb="@drawable/whitecircle"
+                    android:thumbOffset="-9dp" />
             </LinearLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/marginTop" />
-
-            <LinearLayout
+            <TextView
+                android:id="@+id/countPlayersTextView"
+                style="@style/TextStyle"
+                android:layout_gravity="center_vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/whitebox"
-                android:orientation="horizontal"
-                android:visibility="invisible">
-
-                <LinearLayout
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        style="@style/TextStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/leftBorder"
-                        android:layout_marginTop="8dp"
-                        android:text="Время на прочтение вопроса"
-                        android:textSize="5pt" />
-
-
-                    <SeekBar
-                        android:id="@+id/seekBar2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="5"
-                        android:progressDrawable="@drawable/radioline"
-                        android:splitTrack="false"
-                        android:thumb="@drawable/whitecircle"
-                        android:thumbOffset="-9dp" />
-                </LinearLayout>
-
-                <TextView
-                    style="@style/TextStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="@dimen/rigthBorder"
-                    android:layout_weight="4"
-                    android:text="30 c"
-                    android:textSize="9pt" />
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/marginTop" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/whitebox"
-                android:orientation="horizontal"
-                android:visibility="invisible">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        style="@style/TextStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/leftBorder"
-                        android:layout_marginTop="8dp"
-                        android:text="Время на ответ"
-                        android:textSize="5pt" />
-
-                    <SeekBar
-                        android:id="@+id/seekBar3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="5"
-                        android:progressDrawable="@drawable/radioline"
-                        android:splitTrack="false"
-                        android:thumb="@drawable/whitecircle"
-                        android:thumbOffset="-9dp" />
-                </LinearLayout>
-
-                <TextView
-                    style="@style/TextStyle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="@dimen/rigthBorder"
-                    android:layout_weight="4"
-                    android:text="30 c"
-                    android:textSize="9pt" />
-
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="30dp" />
-
-            <Button
-                style="@style/ButtonStyle"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:text="Создать игру"
-                android:visibility="invisible" />
+                android:layout_marginRight="@dimen/rigthBorder"
+                android:layout_weight="4"
+                android:textSize="9pt"
+                android:text="1" />
 
 
         </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/marginTop" />
+
+        <Button
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Выбор вопросов"
+            android:onClick="choseQuestion" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/marginTop" />
+
+        <LinearLayout
+            android:id="@+id/choseComplex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/whitebox"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <TextView
+                style="@style/TextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="Выбрать сложность" />
+
+            <LinearLayout
+                android:id="@+id/complexLayout"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="@drawable/graybutton"
+                    android:fontFamily="@font/marvin"
+                    android:text="Легко" />
+
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="@drawable/graybutton"
+                    android:fontFamily="@font/marvin"
+                    android:text="Средне" />
+
+                <View
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="@drawable/graybutton"
+                    android:fontFamily="@font/marvin"
+                    android:text="Сложно" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/marginTop" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/whitebox"
+            android:visibility="invisible">
+
+            <LinearLayout
+
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/leftBorder"
+                    android:layout_marginTop="8dp"
+                    android:text="Время на прочтение вопроса"
+                    android:textSize="5pt" />
+
+
+                <SeekBar
+                    android:id="@+id/seekBar2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:progressDrawable="@drawable/radioline"
+                    android:splitTrack="false"
+                    android:thumb="@drawable/whitecircle"
+                    android:thumbOffset="-9dp" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/TextStyle"
+                android:layout_gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/rigthBorder"
+                android:layout_weight="4"
+                android:textSize="9pt"
+                android:text="30 c" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/marginTop" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/whitebox"
+            android:visibility="invisible">
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/leftBorder"
+                    android:layout_marginTop="8dp"
+                    android:text="Время на ответ"
+                    android:textSize="5pt" />
+
+                <SeekBar
+                    android:id="@+id/seekBar3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:progressDrawable="@drawable/radioline"
+                    android:splitTrack="false"
+                    android:thumb="@drawable/whitecircle"
+                    android:thumbOffset="-9dp" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/TextStyle"
+                android:layout_gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/rigthBorder"
+                android:layout_weight="4"
+                android:textSize="9pt"
+                android:text="30 c" />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            style="@style/ButtonStyle"
+            android:visibility="invisible"
+            android:text="Создать игру" />
+
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
