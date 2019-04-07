@@ -43,15 +43,7 @@
             android:layout_marginTop="210dp"
             android:layout_marginEnd="42dp"
             android:layout_marginBottom="140dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-            app:layout_constraintVertical_bias="0.47000003">
-
-
-
+            android:orientation="vertical">
         </LinearLayout>
 
 
