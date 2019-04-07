@@ -7,10 +7,11 @@ import ru.liveproduction.victoria.api.Pack;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PackManager {
+public class PackManager implements Serializable {
     List<Pack> packList;
 
     private PackManager(){};

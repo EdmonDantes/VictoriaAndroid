@@ -2,9 +2,10 @@ package ru.liveproduction.victoria.api;
 
 import com.google.gson.JsonObject;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class Game {
+public class Game implements Serializable {
 
     public static int ids = 0;
     int id = ids++;

@@ -2,7 +2,9 @@ package ru.liveproduction.victoria.api;
 
 import com.google.gson.JsonObject;
 
-public class Action {
+import java.io.Serializable;
+
+public class Action implements Serializable {
     public enum Type {
 
         //Pre lobby

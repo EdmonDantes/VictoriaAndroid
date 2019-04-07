@@ -8,15 +8,22 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.JsonObject;
 
 import org.w3c.dom.Text;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Predicate;
 
 import ru.liveproduction.victoria.R;
+import ru.liveproduction.victoria.VictoriaApplication;
+import ru.liveproduction.victoria.api.Lobby;
 import ru.liveproduction.victoria.api.Pack;
+import ru.liveproduction.victoria.api.Question;
 import ru.liveproduction.victoria.utils.Utils;
 import ru.liveproduction.victoria.view.CustomButton;
 
@@ -102,11 +109,42 @@ public class NewGameActivity extends BaseActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 43 && resultCode == RESULT_OK) {
+            pack = (Pack) data.getSerializableExtra("pack");
+
             findViewById(R.id.choseComplex).setVisibility(View.VISIBLE);
             findViewById(R.id.l1).setVisibility(View.VISIBLE);
             findViewById(R.id.l2).setVisibility(View.VISIBLE);
             findViewById(R.id.l3).setVisibility(View.VISIBLE);
             ((Button) findViewById(R.id.choseQuest)).setText("Пак №" + ((Pack)data.getSerializableExtra("pack")).getId());
+
+            boolean easy = false, middle = false, hard = false;
+
+            for (Map.Entry<String, List<Question>> tmp : pack.getData().entrySet()) {
+                easy = easy | tmp.getValue().stream().anyMatch(new Predicate<Question>() {
+                    @Override
+                    public boolean test(Question question) {
+                        return question.getPrice() > 0 && question.getPrice() <= 40;
+                    }
+                });
+
+                middle = middle | tmp.getValue().stream().anyMatch(new Predicate<Question>() {
+                    @Override
+                    public boolean test(Question question) {
+                        return question.getPrice() > 40 && question.getPrice() <= 80;
+                    }
+                });
+
+                hard = hard | tmp.getValue().stream().anyMatch(new Predicate<Question>() {
+                    @Override
+                    public boolean test(Question question) {
+                        return question.getPrice() > 80;
+                    }
+                });
+            }
+
+            if (!easy) findViewById(R.id.easy).setVisibility(View.GONE);
+            if (!middle) findViewById(R.id.middle).setVisibility(View.GONE);
+            if (!hard) findViewById(R.id.hard).setVisibility(View.GONE);
         }
     }
 
@@ -136,9 +174,15 @@ public class NewGameActivity extends BaseActivity {
                         new String[]{"timeRead", String.valueOf(timeRead.getProgress())},
                         new String[]{"timeWrite", String.valueOf(timeWrite.getProgress())}
                 }).getAsInt();
+
+                Lobby lobby = new Lobby(textView.getText().toString(), pack.getId(), players.getProgress(),  timeWrite.getProgress(), timeRead.getProgress(), easy.isCheck(), middle.isCheck(), hard.isCheck(), VictoriaApplication.user.getId());
+
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        } else {
+            Toast.makeText(this, "Неправильные данные", Toast.LENGTH_SHORT).show();
         }
     }
 }
