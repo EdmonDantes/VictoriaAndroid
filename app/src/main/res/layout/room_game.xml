@@ -7,12 +7,14 @@
     <RelativeLayout
         android:id="@+id/android_4"
         android:layout_width="match_parent"
-        android:layout_height="665dp"
+        android:layout_height="wrap_content"
         android:background="#0073A0"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="-6dp">
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <Button
+            android:id="@+id/linearLayout1"
             style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -24,25 +26,40 @@
             android:text="Название комнаты" />
 
         <Button
+            android:id="@+id/linearLayout2"
             style="@style/ButtonStyle"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="120dp"
             android:layout_marginRight="25dp"
-            android:layout_marginBottom="475dp"
+            android:layout_marginBottom="45dp"
             android:text="Название категории" />
 
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            style="@style/ButtonStyle"
+            android:layout_width="271dp"
+            android:layout_height="318dp"
+            android:layout_below="@id/linearLayout2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="-9dp"
+            android:orientation="vertical" />
 
         <Button
+            android:id="@+id/linearLayout4"
             style="@style/ButtonStyle"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="540dp"
-            android:layout_marginRight="25dp"
-            android:layout_marginBottom="50dp"
+            android:layout_width="215dp"
+            android:layout_height="94dp"
+            android:layout_below="@id/linearLayout3"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginBottom="-264dp"
+            android:below="@id/linearLayout3"
             android:text="Готов!" />
+
+
     </RelativeLayout>
 
 

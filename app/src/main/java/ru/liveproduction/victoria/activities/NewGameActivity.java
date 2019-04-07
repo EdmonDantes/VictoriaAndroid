@@ -14,9 +14,6 @@ import ru.liveproduction.victoria.R;
 
 public class NewGameActivity extends BaseActivity {
 
-int g;
-    Timer  timer;
-    TimerTask mTimerTask;
     @Override
     protected void onCreate(@Nullable final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
