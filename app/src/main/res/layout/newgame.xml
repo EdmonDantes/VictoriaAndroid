@@ -273,7 +273,7 @@
                     <SeekBar
                         android:id="@+id/timeWrite"
                         android:max="180"
-                        android:progress="30"
+                        android:progress="1"
                         android:min="30"
 
                         android:layout_width="match_parent"
