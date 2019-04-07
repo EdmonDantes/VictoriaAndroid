@@ -19,13 +19,13 @@ import ru.liveproduction.victoria.api.PackManager;
 import ru.liveproduction.victoria.utils.Utils;
 
 public class ChoseQuestionActivity extends BaseActivity {
-
+    Activity activity;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chosepack);
         new Task(this).execute();
-
+        activity = this;
     }
 
     class Task extends AsyncTask<Void, Void, PackManager> {
@@ -59,9 +59,10 @@ public class ChoseQuestionActivity extends BaseActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 43 && resultCode == RESULT_OK) {
+        if (resultCode == RESULT_OK) {
             if (data != null || data.hasExtra("pack")) {
-                setResult(RESULT_OK, data);
+                activity.setResult(Activity.RESULT_OK, data);
+                activity.finish();
             }
         }
     }

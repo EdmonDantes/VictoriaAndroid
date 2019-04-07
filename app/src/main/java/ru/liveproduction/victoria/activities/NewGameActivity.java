@@ -69,6 +69,15 @@ int g;
 
     public void choseQuestion(View view) {
         Intent in = new Intent(this, ChoseQuestionActivity.class);
-        startActivity(in);
+        in.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+        startActivityForResult(in, 43);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 43 && resultCode == RESULT_OK) {
+            findViewById(R.id.choseComplex).setVisibility(View.VISIBLE);
+        }
     }
 }
