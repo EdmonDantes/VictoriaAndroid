@@ -71,7 +71,7 @@ public class InfoPackActivity extends BaseActivity {
     public void chosePack(View view) {
         Intent intent = new Intent();
         intent.putExtra("pack", pack);
-        setResult(43, intent);
+        setResult(RESULT_OK, intent);
         finish();
     }
 }

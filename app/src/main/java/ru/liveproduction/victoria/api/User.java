@@ -58,6 +58,10 @@ public class User {
         return jsonObject;
     }
 
+    public static User fromJson(JsonObject jsonObject){
+        return new User(jsonObject.get("id").getAsInt(), jsonObject.get("name").getAsString(), jsonObject.get("token").getAsString(), jsonObject.get("registerTime").getAsLong());
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof User)

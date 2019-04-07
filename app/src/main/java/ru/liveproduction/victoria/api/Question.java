@@ -10,10 +10,11 @@ package ru.liveproduction.victoria.api;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Question {
+public class Question implements Serializable {
     String question;
     List<String> answers;
     int price;

@@ -32,6 +32,7 @@
         <activity android:name=".activities.TableActivity" android:screenOrientation="landscape"/>
         <activity android:name=".activities.ChoseQuestionActivity" />
         <activity android:name=".activities.SearchGameActivity"/>
+        <activity android:name=".activities.InfoPackActivity"/>
     </application>
 
 </manifest>

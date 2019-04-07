@@ -1,14 +1,22 @@
 package ru.liveproduction.victoria.activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
+import android.widget.ListView;
 
+import java.io.IOException;
 import java.net.HttpURLConnection;
 
 import ru.liveproduction.victoria.R;
+import ru.liveproduction.victoria.VictoriaApplication;
+import ru.liveproduction.victoria.adapters.PackAdapter;
+import ru.liveproduction.victoria.api.Pack;
+import ru.liveproduction.victoria.api.PackManager;
+import ru.liveproduction.victoria.utils.Utils;
 
 public class ChoseQuestionActivity extends BaseActivity {
 
@@ -16,19 +24,45 @@ public class ChoseQuestionActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chosepack);
-        new Task().execute();
-        findViewById(R.id.chosePackListView);
+        new Task(this).execute();
+
     }
 
-    class Task extends AsyncTask<Void, Void, Void> {
-        @Override
-        protected Void doInBackground(Void... voids) {
+    class Task extends AsyncTask<Void, Void, PackManager> {
+        Activity activity;
 
+        public Task(Activity activity) {
+            this.activity = activity;
         }
 
         @Override
-        protected void onPostExecute(Void aVoid) {
+        protected PackManager doInBackground(Void... voids) {
+            PackManager packManager = null;
+            try {
+                packManager = PackManager.fromJson(Utils.get(1,new String[][]{}).getAsJsonObject());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return packManager;
+        }
+
+        @Override
+        protected void onPostExecute(PackManager aVoid) {
             super.onPostExecute(aVoid);
+            findViewById(R.id.progressBar).setVisibility(View.GONE);
+            ListView listView = findViewById(R.id.chosePackListView);
+            VictoriaApplication.packList = aVoid.getPackList();
+            listView.setAdapter(new PackAdapter(this.activity));
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 43 && resultCode == RESULT_OK) {
+            if (data != null || data.hasExtra("pack")) {
+                setResult(RESULT_OK, data);
+            }
         }
     }
 }
