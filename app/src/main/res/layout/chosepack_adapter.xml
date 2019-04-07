@@ -3,13 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
+
     <Button
         android:id="@+id/buttonstandartpack1"
         style="@style/ButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/leftBorder"
-        android:layout_marginEnd="@dimen/rigthBorder"
         android:text="Стандартный пак" />
 
 
