@@ -16,6 +16,7 @@
         tools:layout_editor_absoluteX="44dp"
         tools:layout_editor_absoluteY="0dp" />
 
+
     <LinearLayout
         android:id="@+id/linearLayout3"
         style="@style/ButtonStyle"
@@ -107,6 +108,21 @@
 
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/linearLayout8"
+        style="@style/ButtonStyle"
+        android:layout_width="255dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="536dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:textSize="24dp"
+        android:text="Вернуться в лобби"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>
