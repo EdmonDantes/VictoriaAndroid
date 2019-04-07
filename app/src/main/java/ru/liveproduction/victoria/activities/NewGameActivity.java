@@ -10,10 +10,10 @@ import android.widget.TextView;
 
 import ru.liveproduction.victoria.R;
 
-public class NewGameActivity extends Activity {
+public class NewGameActivity extends BaseActivity {
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(@Nullable final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.newgame);
 
@@ -42,13 +42,5 @@ public class NewGameActivity extends Activity {
     public void choseQuestion(View view) {
         Intent in = new Intent(this, ChoseQuestionActivity.class);
         startActivity(in);
-    }
-
-   // public void go_back(){
-     //   DataTablePage DTP = new DataTablePage(int id, int parms);
-
-//    }
-    public void go_back(View v){
-        onBackPressed();// возврат на предыдущий activity
     }
 }

@@ -3,9 +3,10 @@ package ru.liveproduction.victoria.api;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class Pack {
+public class Pack implements Serializable {
     int id;
     Map <String,  List<Question>> data;
 
@@ -81,6 +82,19 @@ public class Pack {
 
         return result;
 
+    }
+
+    public Map<String, List<Question>> getData() {
+        return data;
+    }
+
+    public Set<String> getCategories(){
+        Set<String> result = new TreeSet<>();
+        for (Map.Entry<String, List<Question>> test : data.entrySet()) {
+            result.add(test.getKey());
+        }
+
+        return result;
     }
 
     public static Pack fromJson(JsonObject obj) {

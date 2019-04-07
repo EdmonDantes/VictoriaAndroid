@@ -6,14 +6,10 @@ import android.view.View;
 
 import ru.liveproduction.victoria.R;
 
-public class SearchGameActivity extends AppCompatActivity {
+public class SearchGameActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_game);
-    }
-
-    public void go_back(View v){
-        onBackPressed();// возврат на предыдущий activity
     }
 }
