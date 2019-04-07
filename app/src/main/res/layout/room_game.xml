@@ -50,14 +50,28 @@
         <Button
             android:id="@+id/linearLayout4"
             style="@style/ButtonStyle"
-            android:layout_width="215dp"
-            android:layout_height="94dp"
+            android:layout_width="173dp"
+            android:layout_height="75dp"
             android:layout_below="@id/linearLayout3"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="26dp"
+            android:layout_marginStart="230dp"
+            android:layout_marginTop="43dp"
             android:layout_marginBottom="-264dp"
 
             android:text="Готов!" />
+
+        <Button
+            android:id="@+id/not_ready"
+            style="@style/ButtonStyle"
+
+            android:layout_width="173dp"
+            android:layout_height="75dp"
+            android:layout_below="@id/linearLayout3"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="43dp"
+            android:layout_marginBottom="-264dp"
+            android:text="выйти"
+
+            />
 
 
     </RelativeLayout>

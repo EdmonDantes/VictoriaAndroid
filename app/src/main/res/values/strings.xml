@@ -6,4 +6,8 @@
     <string name="new_game">Новая игра</string>
     <string name="connection">Присоединиться</string>
     <string name="namehint">Название</string>
+    <string name="ready">Готов</string>
+    <string name="not_ready">не готов</string>
+
+
 </resources>

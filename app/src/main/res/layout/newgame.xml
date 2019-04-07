@@ -262,7 +262,7 @@
 
                     <TextView
                         style="@style/TextStyle"
-                        android:id="@+id/countTimeReadTextView"
+
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/leftBorder"
@@ -286,6 +286,7 @@
                 </LinearLayout>
 
                 <TextView
+                    android:id="@+id/countTimeReadTextView"
                     style="@style/TextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
