@@ -8,5 +8,8 @@ import ru.liveproduction.victoria.R;
 import ru.liveproduction.victoria.api.Pack;
 
 public class QuetionTableActivity {
+    public void writeQuestion() {
 
+
+    }
 }
