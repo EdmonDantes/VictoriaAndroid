@@ -23,4 +23,8 @@ public class MainActivity extends AppCompatActivity {
         Intent in = new Intent(this, NewGameActivity.class);
         startActivity(in);
     }
+    public void connected(View view) {
+        Intent in = new Intent(this, SearchGameActivity.class);
+        startActivity(in);
+    }
 }

@@ -6,7 +6,7 @@ import android.support.annotation.Nullable;
 
 import ru.liveproduction.victoria.R;
 
-public class ChoseQuestion extends Activity {
+public class ChoseQuestionActivity extends Activity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

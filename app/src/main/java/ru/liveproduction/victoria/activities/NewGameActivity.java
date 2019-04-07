@@ -40,6 +40,7 @@ public class NewGameActivity extends Activity {
     }
 
     public void choseQuestion(View view) {
-        //Intent in = new Intent(this, )
+        Intent in = new Intent(this, ChoseQuestionActivity.class);
+        startActivity(in);
     }
 }

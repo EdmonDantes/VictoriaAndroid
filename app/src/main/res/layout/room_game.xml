@@ -7,49 +7,42 @@
     <RelativeLayout
         android:id="@+id/android_4"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="665dp"
         android:background="#0073A0"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="-6dp">
 
         <Button
             style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="25dp"
             android:layout_marginTop="30dp"
-            android:layout_marginBottom="575dp"
-            android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Название комнаты"
-            android:orientation="vertical" />
+            android:layout_marginBottom="575dp"
+            android:orientation="vertical"
+            android:text="Название комнаты" />
 
         <Button
             style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Название категории"
+            android:layout_marginLeft="25dp"
             android:layout_marginTop="120dp"
+            android:layout_marginRight="25dp"
             android:layout_marginBottom="475dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp" />
+            android:text="Название категории" />
 
-        <View
-            style="@style/ButtonStyle"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="210dp"
-            android:layout_marginBottom="130dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp" />
 
         <Button
             style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Готов!"
-            android:layout_marginTop="540dp"
-            android:layout_marginBottom="50dp"
             android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp" />
+            android:layout_marginTop="540dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="50dp"
+            android:text="Готов!" />
     </RelativeLayout>
 
 

@@ -38,6 +38,8 @@
             android:layout_height="150dp"
             style="@style/ButtonStyle"
             android:text="@string/connection"
+            android:onClick="connected"
+
             />
     </LinearLayout>
 

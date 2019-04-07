@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground">
-
     <ImageButton
         android:layout_width="56dp"
         android:layout_height="55dp"
@@ -14,12 +13,16 @@
         android:src="@drawable/go_back"
 
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+
+        android:onClick="go_back"
+        />
     <ListView
         android:id="@+id/chosePackListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="48dp"
-        app:layout_constraintTop_toTopOf="parent"></ListView>
+        app:layout_constraintTop_toTopOf="parent" ></ListView>
+
 
 </android.support.constraint.ConstraintLayout>
