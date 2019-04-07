@@ -12,18 +12,16 @@
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="-6dp">
 
-        <TextView
+        <Button
             style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:layout_marginLeft="25dp"
             android:layout_marginTop="30dp"
             android:layout_marginRight="25dp"
             android:layout_marginBottom="575dp"
             android:orientation="vertical"
-            android:text="Название комнаты"
-            />
+            android:text="Название комнаты" />
 
         <Button
             style="@style/ButtonStyle"
@@ -34,17 +32,6 @@
             android:layout_marginRight="25dp"
             android:layout_marginBottom="475dp"
             android:text="Название категории" />
-
-        <LinearLayout
-            style="@style/ButtonStyle"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="42dp"
-            android:layout_marginTop="210dp"
-            android:layout_marginEnd="42dp"
-            android:layout_marginBottom="140dp"
-            android:orientation="vertical">
-        </LinearLayout>
 
 
         <Button

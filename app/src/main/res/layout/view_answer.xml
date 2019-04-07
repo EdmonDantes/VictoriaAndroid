@@ -25,27 +25,17 @@
             android:textAlignment="center" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayout6"
-        android:layout_width="match_parent"
-        android:layout_marginEnd="16dp"
-        android:background="@color/colorBackground"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="ExtraText,MissingConstraints"
-        tools:layout_editor_absoluteY="100dp"
-        android:layout_height="0dp" />
 
     <TextView
         style="@style/TextStyle"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="80dp"
-        android:layout_marginBottom="200dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="288dp"
+        android:layout_marginBottom="240dp"
         android:text="Ответ"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="16dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button2"
@@ -62,7 +52,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout6"
         app:layout_constraintVertical_bias="1.0" />
 
 </android.support.constraint.ConstraintLayout>
