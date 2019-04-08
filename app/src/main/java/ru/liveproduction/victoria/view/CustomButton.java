@@ -10,7 +10,7 @@ import ru.liveproduction.victoria.R;
 
 public class CustomButton extends android.support.v7.widget.AppCompatButton {
 
-    boolean check;
+    boolean check = true;
 
     public void init(){
         this.setOnClickListener(new OnClickListener() {
@@ -44,6 +44,6 @@ public class CustomButton extends android.support.v7.widget.AppCompatButton {
     }
 
     public boolean isCheck() {
-        return check;
+        return !check;
     }
 }

@@ -1,10 +1,12 @@
 package ru.liveproduction.victoria.api;
 
 import com.google.gson.JsonObject;
+
+import java.io.Serializable;
 import java.util.*;
 import java.util.function.Predicate;
 
-public class Lobby {
+public class Lobby implements Serializable {
 
     String name;
     int packId;
@@ -53,9 +55,22 @@ public class Lobby {
     }
 
     public boolean readyUser(User user) {
+        return setReadyUser(user, true);
+    }
+
+    public boolean getReadyUser(User user){
         for (Map.Entry<User, Boolean> pair : players) {
             if (pair.getKey().equals(user)){
-                pair.setValue(true);
+                return pair.getValue();
+            }
+        }
+        return false;
+    }
+
+    public boolean setReadyUser(User user, boolean value) {
+        for (Map.Entry<User, Boolean> pair : players) {
+            if (pair.getKey().equals(user)){
+                pair.setValue(value);
                 return true;
             }
         }

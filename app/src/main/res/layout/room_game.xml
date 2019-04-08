@@ -7,33 +7,32 @@
     <RelativeLayout
         android:id="@+id/android_4"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="#0073A0"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
 
         <Button
-            android:id="@+id/linearLayout1"
-            style="@style/ButtonStyle"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="25dp"
-            android:layout_marginBottom="575dp"
-            android:orientation="vertical"
-            android:text="Название комнаты" />
-
-        <Button
-            android:id="@+id/linearLayout2"
+            android:id="@+id/namelobby"
             style="@style/ButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="120dp"
+            android:layout_marginTop="30dp"
             android:layout_marginRight="25dp"
-            android:layout_marginBottom="45dp"
+            android:orientation="vertical"
+            android:text="Название комнаты" />
+
+        <Button
+            android:id="@+id/namepack"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/namelobby"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="25dp"
             android:text="Название категории" />
 
         <ListView
@@ -41,22 +40,22 @@
             style="@style/ButtonStyle"
             android:layout_width="271dp"
             android:layout_height="318dp"
-            android:layout_below="@id/linearLayout2"
+            android:layout_below="@id/namepack"
             android:layout_centerHorizontal="true"
             android:layout_marginStart="1dp"
-            android:layout_marginTop="-9dp"
+            android:layout_marginTop="10dp"
             android:orientation="vertical" />
 
         <Button
-            android:id="@+id/linearLayout4"
+            android:id="@+id/ready"
             style="@style/ButtonStyle"
             android:layout_width="173dp"
             android:layout_height="75dp"
             android:layout_below="@id/linearLayout3"
             android:layout_marginStart="230dp"
-            android:layout_marginTop="43dp"
+            android:layout_marginTop="32dp"
             android:layout_marginBottom="-264dp"
-
+            android:onClick="ready"
             android:text="Готов!" />
 
         <Button
@@ -67,10 +66,10 @@
             android:layout_height="75dp"
             android:layout_below="@id/linearLayout3"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="43dp"
+            android:layout_marginTop="32dp"
             android:layout_marginBottom="-264dp"
             android:text="выйти"
-
+            android:onClick="exit"
             />
 
 

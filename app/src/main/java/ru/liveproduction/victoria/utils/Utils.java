@@ -14,6 +14,7 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Map;
 
 import ru.liveproduction.victoria.VictoriaApplication;
 import ru.liveproduction.victoria.api.User;
@@ -21,6 +22,14 @@ import ru.liveproduction.victoria.api.User;
 public class Utils {
 
     public static JsonElement get(int type, String[][] args) throws IOException {
+        JsonObject jsonObject = new JsonObject();
+        for (String[] s : args) {
+            jsonObject.addProperty(s[0], s[1]);
+        }
+        return get(type, jsonObject);
+    }
+
+    public static JsonElement get(int type, JsonObject post) throws IOException {
         URL url = new URL("http://80.211.26.238:8080/");
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setReadTimeout(20000);
@@ -52,7 +61,7 @@ public class Utils {
             }
             VictoriaApplication.user = User.fromJson(new JsonParser().parse(sb.toString()).getAsJsonObject());
 
-            return get(type, args);
+            return get(type, post);
         }
 
         JsonObject jsonObject = new JsonObject();
@@ -60,14 +69,12 @@ public class Utils {
         JsonObject data = new JsonObject();
         data.addProperty("userId", VictoriaApplication.user.getId());
         data.addProperty("token", VictoriaApplication.user.getIdentify());
-
-        for (int i = 0; i < args.length; i++) {
-            if (args[i].length > 1){
-                data.addProperty(args[i][0], args[i][1]);
-            }
-        }
         jsonObject.addProperty("typeRequest", type);
         jsonObject.add("data", data);
+
+        for (Map.Entry<String, JsonElement> elem : post.entrySet()) {
+            jsonObject.add(elem.getKey(), elem.getValue());
+        }
 
         OutputStream os = conn.getOutputStream();
         BufferedWriter writer = new BufferedWriter(
@@ -89,6 +96,10 @@ public class Utils {
 
         if (jsonObject1.has("error")){
             return jsonObject1.get("error");
-        }else return jsonObject1.get("response").getAsJsonObject();
+        }else {
+            if (jsonObject1 != null && jsonObject1.get("response") != null)
+                return jsonObject1.get("response").getAsJsonObject();
+            else return null;
+        }
     }
 }
