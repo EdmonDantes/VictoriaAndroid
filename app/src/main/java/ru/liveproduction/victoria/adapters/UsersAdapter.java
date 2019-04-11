@@ -46,7 +46,7 @@ public class UsersAdapter extends BaseAdapter {
         ((TextView) view.findViewById(R.id.playerName)).setText(lobby.getPlayers().get(i).getKey().getName());
 
         if (lobby.getPlayers().get(i).getValue()) {
-            view.findViewById(R.id.checkbox).setBackgroundResource(R.drawable.check_mark);
+            view.findViewById(R.id.checkbox).setBackgroundResource(R.drawable.check_lobby_layout);
         }
         return view;
     }

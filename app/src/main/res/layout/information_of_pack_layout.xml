@@ -11,8 +11,9 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginLeft="12dp"
-        android:background="@drawable/rectangle"
-        android:src="@drawable/go_back"
+        android:background="@drawable/backgroud_back_arrow"
+        android:src="@drawable/back_arrow"
+        android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:onClick="go_back"/>
