@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.INTERNET}, 1);
+        ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.ACCESS_NETWORK_STATE}, 2);
         requestMultiplePermissions();
 
     }
@@ -49,17 +51,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
-                                           @NonNull int[] grantResults) {
-        if (requestCode == 12 && grantResults.length == 2) {
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
-            }
-            if (grantResults[1] == PackageManager.PERMISSION_GRANTED) {
-
-            }
-        }
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        return;
     }
 
 }

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.io.IOException;
 
@@ -49,7 +50,9 @@ public class ChoseQuestionActivity extends BaseActivity {
             super.onPostExecute(aVoid);
             findViewById(R.id.progressBar).setVisibility(View.GONE);
             ListView listView = findViewById(R.id.chosePackListView);
+            if (aVoid != null)
             VictoriaApplication.packList = aVoid.getPackList();
+            else Toast.makeText(activity, "Ошибка сети", Toast.LENGTH_SHORT).show();
             listView.setAdapter(new PackAdapter(this.activity));
         }
     }

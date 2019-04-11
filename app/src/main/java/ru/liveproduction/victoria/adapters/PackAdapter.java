@@ -32,7 +32,9 @@ public class PackAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return VictoriaApplication.packList.size();
+        if (VictoriaApplication.packList != null)
+            return VictoriaApplication.packList.size();
+        else return 0;
     }
 
     @Override
