@@ -1,6 +1,7 @@
 package ru.liveproduction.victoria.activities;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
@@ -11,6 +12,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import ru.liveproduction.victoria.R;
+import ru.liveproduction.victoria.api.PackManager;
 
 
 /**
@@ -22,10 +24,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.INTERNET}, 1);
-        ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.ACCESS_NETWORK_STATE}, 2);
-        requestMultiplePermissions();
-
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.INTERNET) != PackageManager.PERMISSION_GRANTED) {
+            if (!ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.INTERNET)) {
+                ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.INTERNET, Manifest.permission.ACCESS_NETWORK_STATE}, 1);
+            }
+        }
     }
 
     public void newGame(View view) {
@@ -39,20 +42,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void go_back(View v) {
         onBackPressed();// возврат на предыдущий activity
-    }
-
-    public void requestMultiplePermissions() {
-        ActivityCompat.requestPermissions(this,
-                new String[] {
-                        Manifest.permission.ACCESS_NETWORK_STATE,
-                        Manifest.permission.INTERNET
-                },
-                12);
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        return;
     }
 
 }
