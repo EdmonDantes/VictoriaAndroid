@@ -1,31 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground">
+    android:background="@color/colorBackground"
+    android:orientation="vertical">
+
+
+    <ImageButton
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/backgroud_back_arrow"
+        android:scaleType="fitCenter"
+        android:src="@drawable/go_back"
+        android:onClick="go_back"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_weight="1"
+            android:id="@+id/name"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:hint="@string/namehint"
+            android:maxLength="17"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="78dp"
-        tools:layout_editor_absoluteY="48dp">
+        tools:layout_editor_absoluteX="44dp"
+        tools:layout_editor_absoluteY="0dp">
 
 
-        <ImageButton
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_marginLeft="8dp"
-            android:background="@drawable/backgroud_back_arrow"
-            android:onClick="go_back"
-            android:scaleType="fitCenter"
-            android:src="@drawable/go_back"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />
+
 
 
         <LinearLayout
@@ -42,14 +66,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
 
-            <EditText
-                android:id="@+id/name"
-                style="@style/ButtonStyle"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:hint="@string/namehint"
-                android:maxLength="17"
-                android:textAlignment="center" />
+
 
             <View
                 android:layout_width="match_parent"
@@ -68,36 +85,34 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:layout_weight="1"
                         style="@style/TextStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/leftBorder"
+                        android:layout_marginStart="@dimen/leftBorder"
                         android:layout_marginTop="8dp"
                         android:text="Кол-во игроков"
                         android:textSize="5pt" />
 
                     <SeekBar
+                        android:layout_weight="1"
                         android:id="@+id/players"
-                        android:max="14"
-                        android:progress="1"
-                        android:min="2"
-                        android:layout_marginLeft="12dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:progressDrawable="@drawable/radioline"
-                        android:splitTrack="false"
-                        android:thumb="@drawable/whitecircle" />
+                        android:min="2"
+                        android:progress="2"
+                        android:max="12"/>
                 </LinearLayout>
 
                 <TextView
                     android:id="@+id/countPlayersTextView"
                     style="@style/TextStyle"
-                    android:gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginRight="@dimen/rigthBorder"
+                    android:layout_marginEnd="@dimen/rigthBorder"
                     android:layout_weight="4"
+                    android:gravity="center"
                     android:text="2"
                     android:textSize="9pt" />
 
@@ -112,7 +127,7 @@
                 android:id="@+id/choseQuest"
                 style="@style/ButtonStyle"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
                 android:onClick="choseQuestion"
                 android:text="Выбор вопросов" />
 
@@ -139,7 +154,7 @@
                 <LinearLayout
                     android:id="@+id/complexLayout"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="25dp"
                     android:layout_marginLeft="12dp"
                     android:layout_marginRight="12dp"
                     android:layout_marginBottom="8dp"
@@ -147,35 +162,26 @@
 
                     <ru.liveproduction.victoria.view.CustomButton
                         android:id="@+id/easy"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="3"
                         android:background="@drawable/graybutton"
                         android:fontFamily="@font/marvin"
                         android:text="Легко" />
 
-                    <View
-                        android:layout_width="20dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
-
                     <ru.liveproduction.victoria.view.CustomButton
                         android:id="@+id/middle"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
                         android:background="@drawable/graybutton"
                         android:fontFamily="@font/marvin"
                         android:text="Средне" />
 
-                    <View
-                        android:layout_width="20dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
 
                     <ru.liveproduction.victoria.view.CustomButton
                         android:id="@+id/hard"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="3"
                         android:background="@drawable/graybutton"
@@ -208,7 +214,7 @@
                         style="@style/TextStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/leftBorder"
+                        android:layout_marginStart="@dimen/leftBorder"
                         android:layout_marginTop="8dp"
                         android:text="Время на прочтение вопроса"
                         android:textSize="5pt" />
@@ -216,12 +222,12 @@
 
                     <SeekBar
                         android:id="@+id/timer"
-                        android:max="10"
-                        android:progress="2"
-                        android:min="1"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="0dp"
                         android:layout_weight="5"
+                        android:max="10"
+                        android:min="0"
+                        android:progress="2"
                         android:progressDrawable="@drawable/radioline"
                         android:splitTrack="false"
                         android:thumb="@drawable/whitecircle"
@@ -235,9 +241,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginRight="@dimen/rigthBorder"
+                    android:layout_marginEnd="@dimen/rigthBorder"
                     android:layout_weight="4"
-                    android:text="0"
+                    android:text="2c"
                     android:textSize="9pt" />
 
             </LinearLayout>
@@ -265,20 +271,20 @@
 
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/leftBorder"
+                        android:layout_marginStart="@dimen/leftBorder"
                         android:layout_marginTop="8dp"
                         android:text="Время на ответ"
                         android:textSize="5pt" />
 
                     <SeekBar
                         android:id="@+id/timeWrite"
-                        android:max="180"
-                        android:progress="1"
-                        android:min="30"
-
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="0dp"
                         android:layout_weight="5"
+
+                        android:max="180"
+                        android:min="30"
+                        android:progress="30"
                         android:progressDrawable="@drawable/radioline"
                         android:splitTrack="false"
                         android:thumb="@drawable/whitecircle"
@@ -291,9 +297,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginRight="@dimen/rigthBorder"
+                    android:layout_marginEnd="@dimen/rigthBorder"
                     android:layout_weight="4"
-                    android:text="30 c"
+                    android:text="30c"
                     android:textSize="9pt" />
 
 
@@ -301,19 +307,19 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="30dp" />
+                android:layout_height="15dp" />
 
             <Button
                 android:id="@+id/l3"
                 style="@style/ButtonStyle"
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="wrap_content"
+                android:onClick="createGame"
                 android:text="Создать игру"
-                android:visibility="invisible"
-                android:onClick="createGame"/>
+                android:visibility="invisible" />
 
 
         </LinearLayout>
     </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

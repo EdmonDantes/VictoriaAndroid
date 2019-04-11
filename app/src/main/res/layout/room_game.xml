@@ -1,79 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#0073A0">
 
-    <RelativeLayout
-        android:id="@+id/android_4"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#0073A0"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+        android:layout_marginBottom="30dp"
 
-        <Button
+        android:orientation="vertical">
+
+        <TextView
             android:id="@+id/namelobby"
             style="@style/ButtonStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="30dp"
             android:layout_marginRight="25dp"
+            android:layout_weight="2"
+            android:gravity="center"
             android:orientation="vertical"
             android:text="Название комнаты" />
 
-        <Button
+        <TextView
             android:id="@+id/namepack"
             style="@style/ButtonStyle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/namelobby"
+            android:layout_height="match_parent"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="25dp"
+            android:layout_weight="2"
+            android:gravity="center"
             android:text="Название категории" />
 
         <ListView
             android:id="@+id/linearLayout3"
             style="@style/ButtonStyle"
-            android:layout_width="271dp"
-            android:layout_height="318dp"
-            android:layout_below="@id/namepack"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_centerHorizontal="true"
-            android:layout_marginStart="1dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="25dp"
+            android:layout_weight="1"
             android:orientation="vertical" />
 
-        <Button
-            android:id="@+id/ready"
-            style="@style/ButtonStyle"
-            android:layout_width="173dp"
-            android:layout_height="75dp"
-            android:layout_below="@id/linearLayout3"
-            android:layout_marginStart="230dp"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="25dp"
             android:layout_marginTop="32dp"
-            android:layout_marginBottom="-264dp"
-            android:onClick="ready"
-            android:text="Готов!" />
+            android:layout_marginEnd="25dp"
+            android:layout_weight="2"
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/not_ready"
-            style="@style/ButtonStyle"
+            <Button
+                android:id="@+id/ready"
+                style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/linearLayout3"
+                android:layout_weight="1"
+                android:onClick="ready"
+                android:text="Готов!" />
 
-            android:layout_width="173dp"
-            android:layout_height="75dp"
-            android:layout_below="@id/linearLayout3"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="-264dp"
-            android:text="выйти"
-            android:onClick="exit"
-            />
+            <Button
+                android:id="@+id/not_ready"
+                style="@style/ButtonStyle"
 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/linearLayout3"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:onClick="exit"
+                android:text="выйти" />
 
-    </RelativeLayout>
-
-
-</android.support.constraint.ConstraintLayout>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>
