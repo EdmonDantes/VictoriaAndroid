@@ -3,16 +3,11 @@ package ru.liveproduction.victoria.adapters;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.TextView;
-
-import java.util.List;
 
 import ru.liveproduction.victoria.R;
 import ru.liveproduction.victoria.VictoriaApplication;
@@ -50,7 +45,7 @@ public class PackAdapter extends BaseAdapter {
     @Override
     public View getView(final int i, View view, ViewGroup viewGroup) {
         if (view == null) {
-            view = inflater.inflate(R.layout.chosepack_adapter, viewGroup, false);
+            view = inflater.inflate(R.layout.chose_pack_adapter_layout, viewGroup, false);
         }
 
         Button button = ((Button) view.findViewById(R.id.packName));

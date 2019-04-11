@@ -35,7 +35,7 @@
             android:layout_marginRight="25dp"
             android:layout_weight="2"
             android:gravity="center"
-            android:text="Название категории" />
+            android:text="Название пака" />
 
         <ListView
             android:id="@+id/linearLayout3"

@@ -12,9 +12,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-
-import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.util.List;
@@ -36,7 +33,7 @@ public class NewGameActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.newgame);
+        setContentView(R.layout.create_game_layout);
 
         final SeekBar seekBar = (SeekBar) findViewById(R.id.players);
         final TextView textView = (TextView) findViewById(R.id.countPlayersTextView);
@@ -45,7 +42,7 @@ public class NewGameActivity extends BaseActivity {
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                textView.setText(String.valueOf(i));
+                textView.setText(String.valueOf(i + 2));
             }
 
             @Override
@@ -83,7 +80,7 @@ public class NewGameActivity extends BaseActivity {
         seekBarTimeWrite.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                textViewTimeWrite.setText(String.valueOf(i)+"c");
+                textViewTimeWrite.setText(String.valueOf(i + 15)+"c");
             }
 
             @Override
@@ -162,7 +159,7 @@ public class NewGameActivity extends BaseActivity {
         SeekBar timeWrite = findViewById(R.id.timeWrite);
 
         if (textView.getText().toString().length() > 0 && (easy.isCheck() || middle.isCheck() || hard.isCheck())) {
-            Lobby lobby = new Lobby(textView.getText().toString(), pack.getId(), players.getProgress(),  timeWrite.getProgress(), timeRead.getProgress(), easy.isCheck(), middle.isCheck(), hard.isCheck(), VictoriaApplication.user.getId());
+            Lobby lobby = new Lobby(textView.getText().toString(), pack.getId(), players.getProgress() + 2,  timeWrite.getProgress() + 15, timeRead.getProgress(), easy.isCheck(), middle.isCheck(), hard.isCheck(), VictoriaApplication.user.getId());
             new Task(activity, lobby).execute();
         } else {
             Toast.makeText(this, "Неправильные данные", Toast.LENGTH_SHORT).show();

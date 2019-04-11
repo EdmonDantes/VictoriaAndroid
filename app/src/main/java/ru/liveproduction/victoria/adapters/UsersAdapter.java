@@ -1,17 +1,11 @@
 package ru.liveproduction.victoria.adapters;
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import ru.liveproduction.victoria.R;
 import ru.liveproduction.victoria.api.Lobby;
@@ -47,7 +41,7 @@ public class UsersAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup){
         if (view == null)
-            view = layoutInflater.inflate(R.layout.room_game_check_adapter, viewGroup, false);
+            view = layoutInflater.inflate(R.layout.lobby_player_list_adapter_layout, viewGroup, false);
 
         ((TextView) view.findViewById(R.id.playerName)).setText(lobby.getPlayers().get(i).getKey().getName());
 
@@ -59,13 +53,16 @@ public class UsersAdapter extends BaseAdapter {
 
     public void changeUserStatus(User user) {
         lobby.setReadyUser(user, !lobby.getReadyUser(user));
+        notifyDataSetInvalidated();
     }
 
     public void addUser(User user) {
         lobby.addUserToLobby(user);
+        notifyDataSetInvalidated();
     }
 
     public void deleteUser(User user) {
         lobby.exitFromLobby(user);
+        notifyDataSetInvalidated();
     }
 }

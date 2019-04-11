@@ -5,8 +5,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
 
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import java.io.IOException;
@@ -26,10 +26,13 @@ public class LobbyActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.room_game);
+        setContentView(R.layout.lobby_layout);
 
         pack = (Pack) getIntent().getSerializableExtra("pack");
         lobby = (Lobby) getIntent().getSerializableExtra("lobby");
+
+        ((TextView) findViewById(R.id.namelobby)).setText(lobby.getName());
+        ((TextView) findViewById(R.id.namepack)).setText(String.valueOf(pack.getId()));
 
         ListView listView = findViewById(R.id.linearLayout3);
         adapter = new UsersAdapter(this, lobby);
@@ -38,11 +41,7 @@ public class LobbyActivity extends BaseActivity {
     }
 
     public void ready(View view) {
-        adapter = new UsersAdapter(this, lobby);
         adapter.changeUserStatus(VictoriaApplication.user);
-        ListView listView = findViewById(R.id.linearLayout3);
-        listView.setAdapter(adapter);
-        ((ListView) findViewById(R.id.linearLayout3)).invalidateViews();
     }
 
     public void exit(View view) {

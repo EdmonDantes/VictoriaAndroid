@@ -21,7 +21,7 @@ public class InfoPackActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.information_of_pack);
+        setContentView(R.layout.information_of_pack_layout);
 
         pack = (Pack)getIntent().getSerializableExtra("pack");
 
