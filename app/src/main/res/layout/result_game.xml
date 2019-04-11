@@ -41,75 +41,20 @@
             android:text="результат игры" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayout7"
-        style="@style/ButtonStyle"
-        android:layout_width="258dp"
-        android:layout_height="334dp"
-        android:layout_below="@id/linearLayout3"
-        android:layout_centerHorizontal="true"
-
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="40dp"
+    <ListView
+        android:layout_width="309dp"
+        android:layout_height="346dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="156dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
-        android:orientation="vertical">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/Text_View2"
-            style="@style/TextStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/true_answer"
-            android:text="Победитель" />
+    </ListView>
 
-        <TextView
-            android:id="@+id/Text_View3"
-            style="@style/TextStyle"
-            android:background="@drawable/button_new_background"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/Text_View2"
-            android:layout_centerHorizontal="true"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:textSize="23dp"
-            android:text="второе место " />
-        <TextView
-            android:id="@+id/Text_View4"
-            style="@style/TextStyle"
-            android:background="@drawable/button_new_background"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/Text_View3"
-            android:layout_centerHorizontal="true"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:textSize="23dp"
-            android:text="Третье место " />
-        <TextView
-            android:id="@+id/Text_View5"
-            style="@style/TextStyle"
-            android:background="@drawable/button_new_background"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/Text_View4"
-            android:layout_centerHorizontal="true"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:textSize="23dp"
-            android:text="четвертое мест" />
-
-
-    </LinearLayout>
-
-    <TextView
+    <Button
         android:id="@+id/linearLayout8"
         style="@style/ButtonStyle"
         android:layout_width="255dp"
@@ -120,7 +65,7 @@
         android:gravity="center"
         android:textSize="24dp"
         android:text="Вернуться в лобби"
-
+        android:onClick="back_in_lobby"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
