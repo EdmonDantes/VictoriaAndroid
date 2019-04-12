@@ -4,7 +4,8 @@
     android:layout_height="wrap_content">
 
     <RelativeLayout
-        android:background="@drawable/backgroup_search_menu"
+
+        android:background="@drawable/buttonsel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -19,7 +20,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
                 android:text="Name"/>
-            
+
             <TextView
                 style="@style/TextStyle"
                 android:layout_width="wrap_content"

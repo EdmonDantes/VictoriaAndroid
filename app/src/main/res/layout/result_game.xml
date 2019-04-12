@@ -1,73 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground">
-
-    <RelativeLayout
-        android:id="@+id/android_4"
-        android:layout_width="match_parent"
-        android:layout_height="630dp"
-        android:background="#0073A0"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="44dp"
-        tools:layout_editor_absoluteY="0dp" />
-
+    android:background="#0073A0">
 
     <LinearLayout
-        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="30dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/linearLayout1"
         style="@style/ButtonStyle"
-        android:layout_width="255dp"
-        android:layout_height="67dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="80dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
         android:orientation="vertical"
-
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/Text_View"
-            style="@style/TextStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="4dp"
-            android:text="результат игры" />
-    </LinearLayout>
+        android:text="Результат игры"/>
 
     <ListView
-        android:layout_width="309dp"
-        android:layout_height="346dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="156dp"
-        android:layout_marginEnd="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </ListView>
+        style="@style/ButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="4" />
 
     <Button
-        android:id="@+id/linearLayout8"
+        android:id="@+id/linearLayout3"
         style="@style/ButtonStyle"
-        android:layout_width="255dp"
-        android:layout_height="67dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="536dp"
-        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
         android:gravity="center"
-        android:textSize="24dp"
         android:text="Вернуться в лобби"
-        android:onClick="back_in_lobby"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:onClick="backToLobby"
+       />
 
 
-</android.support.constraint.ConstraintLayout>
+    </LinearLayout>
+</FrameLayout>

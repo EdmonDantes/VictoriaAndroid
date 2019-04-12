@@ -19,7 +19,7 @@ public class LogoActivity extends BaseActivity {
         findViewById(R.id.logo_image_view).post(new Runnable() {
             @Override
             public void run() {
-                new CountDownTimer(4000, 40){
+                new CountDownTimer(2000, 20){
                     @Override
                     public void onTick(long l) {
                         alpha += 0.01f;
@@ -29,8 +29,8 @@ public class LogoActivity extends BaseActivity {
 
                     @Override
                     public void onFinish() {
-                        Intent intent = new Intent(activity, MainActivity.class);
-                        startActivity(intent);
+                            Intent intent = new Intent(activity, MainActivity.class);
+                            startActivity(intent);
                     }
                 }.start();
             }

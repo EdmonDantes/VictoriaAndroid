@@ -59,7 +59,7 @@
                     android:layout_height="0dp"
                     android:layout_marginTop="8dp"
                     android:text="Кол-во игроков"
-                    android:textSize="5pt" />
+                    android:textSize="8pt" />
 
                 <SeekBar
                     android:id="@+id/players"
@@ -183,7 +183,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_weight="1"
                     android:text="Время на прочтение вопроса"
-                    android:textSize="5pt" />
+                    android:textSize="8pt" />
 
                 <SeekBar
                     android:id="@+id/timer"
@@ -239,7 +239,7 @@
                     android:layout_height="0dp"
                     android:layout_marginTop="8dp"
                     android:text="Время на ответ"
-                    android:textSize="5pt" />
+                    android:textSize="8pt" />
 
                 <SeekBar
                     android:id="@+id/timeWrite"

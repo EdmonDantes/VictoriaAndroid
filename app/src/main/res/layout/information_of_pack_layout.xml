@@ -79,6 +79,7 @@
             style="@style/TextStyle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="left"
             android:text="Категории"
             android:inputType="textMultiLine"
             android:layout_marginLeft="12dp"
