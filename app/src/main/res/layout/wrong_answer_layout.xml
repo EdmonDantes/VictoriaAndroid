@@ -24,7 +24,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="48dp"
-        android:background="@drawable/false_answer"
+        android:background="@drawable/wrong_answer_layout_button_background"
         android:text="Неправильно!"
         android:textSize="39dp" />
 

@@ -14,7 +14,7 @@
         android:background="@drawable/backgroud_back_arrow"
         android:onClick="go_back"
         android:scaleType="fitCenter"
-        android:src="@drawable/go_back"
+        android:src="@drawable/back_arrow"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
