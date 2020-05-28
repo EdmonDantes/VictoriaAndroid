@@ -8,6 +8,7 @@
     <string name="namehint">Название</string>
     <string name="ready">Готов</string>
     <string name="not_ready">не готов</string>
+    <string name="rightAnswer">Правильно</string>
 
 
 </resources>

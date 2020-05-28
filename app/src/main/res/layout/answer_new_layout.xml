@@ -23,6 +23,7 @@
 
 
     <Button
+        android:visibility="gone"
         android:id="@+id/sendButton"
         style="@style/AnswerButtonStyle"
         android:layout_width="0dp"
@@ -63,6 +64,7 @@
     </ScrollView>
 
     <EditText
+        android:visibility="gone"
         android:id="@+id/answerInput"
         style="@style/ButtonStyle"
         android:layout_width="0dp"
