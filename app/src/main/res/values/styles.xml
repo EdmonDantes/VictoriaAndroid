@@ -23,10 +23,15 @@
     <style name="TextStyle" parent="AppTheme">
         <item name="android:fontFamily">@font/marvin</item>
         <item name="android:textSize">12pt</item>
+        <item name="android:padding">12dp</item>
     </style>
 
     <style name="ButtonStyle" parent="TextStyle">
         <item name="android:background">@drawable/buttonback</item>
+    </style>
+
+    <style name="AnswerButtonStyle" parent="TextStyle">
+        <item name="android:background">@drawable/rigth_answer_button_background</item>
     </style>
 
 

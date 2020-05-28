@@ -27,10 +27,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="45dp"
                 android:text="Name of pack"
-                android:textSize="7pt"/>
+                android:textSize="7pt" />
         </LinearLayout>
 
         <TextView
+            android:id="@+id/countPlayers"
             style="@style/TextStyle"
             android:textSize="10pt"
             android:layout_alignParentRight="true"

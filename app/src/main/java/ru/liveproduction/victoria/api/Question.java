@@ -78,4 +78,7 @@ public class Question implements Serializable {
         return toJson(false);
     }
 
+    public int getId() {
+        return -1;
+    }
 }

@@ -8,24 +8,28 @@
     android:orientation="vertical">
 
     <TextView
-        android:layout_weight="2.5"
+        style="@style/TextStyle"
+        android:layout_width="432dp"
+        android:layout_height="0dp"
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
-        style="@style/TextStyle"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:text="Вопрос который может быть очень длинным, настолько насколько мы не знаем вообще. можно ограничиватьколиво символов" />
+        android:layout_weight="2.5"
+        android:text="Вопрос который может быть очень длинным, настолько насколько мы не знаем вообще." />
 
     <Button
-        android:layout_weight="1"
         style="@style/TextStyle"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="48dp"
+        android:layout_width="362dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginBottom="64dp"
+        android:layout_weight="1"
         android:background="@drawable/wrong_answer_layout_button_background"
         android:text="Неправильно!"
-        android:textSize="39dp" />
+        android:textSize="39dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </LinearLayout>

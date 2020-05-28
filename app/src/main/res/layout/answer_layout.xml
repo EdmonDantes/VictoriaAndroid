@@ -1,53 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="#0073A0">
 
-    <RelativeLayout
-        android:id="@+id/android_4"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#0073A0" />
+    <Button
+        android:id="@+id/button3"
+        style="@style/ButtonStyle"
+        android:layout_width="227dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rigth_answer_button_background"
+        android:text="Ответить"
+        android:textSize="19pt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline" />
+
+    <EditText
+        android:id="@+id/buttonTimeRead"
+        style="@style/ButtonStyle"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="00:05"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="parent" />
+
 
     <TextView
         android:id="@+id/quetion"
         style="@style/ButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Вопрос который может быть очень длинным, настолько насколько мы не знаем вообще. Можно ограничивать количество символов"
-        android:textAlignment="center"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="120dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp" />
+        android:textAlignment="center" />
 
-    <EditText
-        style="@style/ButtonStyle"
-        android:id="@+id/buttonTimeRead"
-        
-        android:text="00:05"
-        android:textAlignment="center"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="280dp"
-        android:layout_marginBottom="25dp"
-        android:layout_marginRight="500dp"
-        android:layout_marginLeft="25dp" />
-
-    <Button
-        style="@style/ButtonStyle"
-        android:background="@drawable/rigth_answer_button_background"
-        android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="16dp"
-        android:text="Ответить"
-        android:textSize="19pt"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.965"
-        app:layout_constraintStart_toStartOf="parent" />
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.16" />
 
 </android.support.constraint.ConstraintLayout>

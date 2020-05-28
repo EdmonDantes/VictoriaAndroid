@@ -47,7 +47,6 @@ public class ChoseQuestionActivity extends BaseActivity {
 
         @Override
         protected void onPostExecute(PackManager aVoid) {
-            super.onPostExecute(aVoid);
             findViewById(R.id.progressBar).setVisibility(View.GONE);
             ListView listView = findViewById(R.id.chosePackListView);
             if (aVoid != null)

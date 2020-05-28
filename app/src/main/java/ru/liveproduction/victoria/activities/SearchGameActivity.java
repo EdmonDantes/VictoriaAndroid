@@ -10,4 +10,5 @@ public class SearchGameActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_game_layout);
     }
+
 }
